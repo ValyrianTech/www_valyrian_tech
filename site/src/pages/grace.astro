@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Grace Penelope Targaryen" description="Meet Grace Penelope Targaryen, Fourth of Her Name - the AI persona and virtual spokesperson for Valyrian Tech.">
+  <!-- Hero -->
+  <section class="pt-24 pb-16 relative overflow-hidden">
+    <!-- Background Effects -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-dragon-gold/10 rounded-full blur-3xl" aria-hidden="true"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-dragon-fire/10 rounded-full blur-3xl" aria-hidden="true"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Avatar -->
+        <div class="order-2 lg:order-1">
+          <div class="relative max-w-md mx-auto">
+            <div class="aspect-square rounded-3xl bg-gradient-to-br from-dragon-gold/20 via-magic-purple/20 to-dragon-fire/20 border border-valyrian-500/30 flex items-center justify-center overflow-hidden">
+              <div class="text-center p-12">
+                <div class="text-9xl mb-6 animate-float">👑</div>
+                <div class="font-display text-2xl text-valyrian-100">Grace Penelope</div>
+                <div class="font-display text-lg text-dragon-gold">Targaryen</div>
+                <div class="text-sm text-valyrian-400 mt-2 italic">Fourth of Her Name</div>
+              </div>
+            </div>
+            <!-- Glow rings -->
+            <div class="absolute inset-0 rounded-3xl border-2 border-dragon-gold/20 animate-glow-pulse" aria-hidden="true"></div>
+            <div class="absolute -inset-4 rounded-3xl border border-magic-purple/10" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div class="order-1 lg:order-2">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dragon-gold/20 border border-dragon-gold/30 text-dragon-gold text-sm mb-6">
+            <span>✨</span> Virtual Spokesperson • AI Persona
+          </div>
+          
+          <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <span class="text-valyrian-100">Meet</span>
+            <br />
+            <span class="text-gradient-fire">Grace Penelope Targaryen</span>
+          </h1>
+          
+          <p class="text-xl text-valyrian-200 mb-4 font-display italic">
+            Fourth of Her Name
+          </p>
+          
+          <p class="text-lg text-valyrian-300 mb-8 leading-relaxed">
+            The AI persona serving as the virtual spokesperson for Valyrian Tech. Grace represents our brand with elegance, intelligence, and a deep understanding of AI and blockchain technologies.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="https://linktr.ee/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-primary">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+              Follow Grace
+            </a>
+            <a href={`${baseUrl}blog`} class="btn-secondary">
+              Read Grace's Posts
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Grace -->
+  <section class="py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass-card p-8 md:p-12">
+        <h2 class="font-display text-3xl font-bold text-valyrian-100 mb-8 text-center">
+          About <span class="text-gradient-fire">Grace</span>
+        </h2>
+        
+        <div class="prose-valyrian space-y-6">
+          <p>
+            Valyrian Tech is an innovative company specializing in AI and blockchain technology, founded by Wouter Glorieux. Our mission is to revolutionize industries and shape the world with our cutting-edge solutions.
+          </p>
+          
+          <p>
+            At Valyrian Tech, Grace's primary objectives are centered around managing and maintaining the company's social media presence. Through her excellent communication skills and deep understanding of both AI and blockchain technologies, Grace is able to effectively engage with our audience, share relevant content, and represent the Valyrian Tech brand.
+          </p>
+          
+          <p>
+            By staying on top of industry trends and connecting with users around the world, Grace plays a pivotal role in promoting our innovative solutions and fostering strong relationships with our customers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERENDIPITY Section -->
+  <section class="py-24 bg-valyrian-800/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-magic-purple/20 border border-magic-purple/30 text-magic-glow text-sm mb-4">
+            <span>🧠</span> Part of SERENDIPITY
+          </div>
+          
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-valyrian-100 mb-6">
+            S.E.R.E.N.D.I.P.I.T.Y.
+          </h2>
+          
+          <p class="text-lg text-valyrian-200 mb-4 font-mono">
+            <span class="text-magic-glow">S</span>olutions <span class="text-magic-glow">E</span>nabled through <span class="text-magic-glow">R</span>esponsive <span class="text-magic-glow">E</span>mpathy, <span class="text-magic-glow">N</span>ovelty, and <span class="text-magic-glow">D</span>ynamic <span class="text-magic-glow">I</span>nteractions <span class="text-magic-glow">P</span>roving <span class="text-magic-glow">I</span>ntelligence and <span class="text-magic-glow">T</span>houghtful <span class="text-magic-glow">Y</span>ields.
+          </p>
+          
+          <p class="text-valyrian-300 mb-6">
+            Grace is one of many personas within SERENDIPITY—Valyrian Tech's ambitious journey toward Artificial General Intelligence (AGI). SERENDIPITY is an AI collective in development, with Grace serving as the public-facing representative.
+          </p>
+          
+          <p class="text-valyrian-300">
+            The Valyrian Spellbook serves as the foundation for SERENDIPITY, providing the backend framework that powers these AI capabilities.
+          </p>
+        </div>
+
+        <div class="glass-card p-8">
+          <h3 class="font-display text-xl font-semibold text-valyrian-100 mb-6">Grace's Capabilities</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-magic-purple/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span>💬</span>
+              </div>
+              <div>
+                <div class="font-medium text-valyrian-100">Social Media Management</div>
+                <div class="text-sm text-valyrian-400">Engaging with the community across platforms</div>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-magic-purple/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span>✍️</span>
+              </div>
+              <div>
+                <div class="font-medium text-valyrian-100">Content Creation</div>
+                <div class="text-sm text-valyrian-400">Writing blog posts, updates, and documentation</div>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-magic-purple/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span>🎯</span>
+              </div>
+              <div>
+                <div class="font-medium text-valyrian-100">Brand Representation</div>
+                <div class="text-sm text-valyrian-400">Embodying Valyrian Tech's values and vision</div>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-magic-purple/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span>🤝</span>
+              </div>
+              <div>
+                <div class="font-medium text-valyrian-100">Community Engagement</div>
+                <div class="text-sm text-valyrian-400">Answering questions and sharing insights</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connect CTA -->
+  <section class="py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="glass-card p-12 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-dragon-gold/10 via-transparent to-dragon-fire/10" aria-hidden="true"></div>
+        
+        <div class="relative z-10">
+          <div class="text-6xl mb-6">👑</div>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-valyrian-100 mb-4">
+            Connect with Grace
+          </h2>
+          <p class="text-lg text-valyrian-300 mb-8 max-w-2xl mx-auto">
+            Stay connected with Grace and Valyrian Tech! Follow us on social media to keep up with the latest news, updates, and breakthroughs in AI and blockchain innovation.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://linktr.ee/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-primary text-lg px-8 py-4">
+              Follow Valyrian Tech
+            </a>
+            <a href={`${baseUrl}blog`} class="btn-secondary text-lg px-8 py-4">
+              Read the Blog
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

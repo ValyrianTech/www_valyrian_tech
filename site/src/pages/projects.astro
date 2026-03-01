@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+
+const projects = [
+  {
+    name: 'GenSelfie',
+    description: 'GenSelfie is a cutting-edge platform that empowers creators to offer unique, AI-generated selfies to their audience. Using advanced generative models, GenSelfie transforms reference photos or creative prompts into stunning, personalized images—perfect for sharing, gifting, or building deeper connections with your community.',
+    longDescription: 'Whether you\'re an online personality, artist, or content creator, GenSelfie makes it easy to expand your digital offerings. Delight your fans with custom selfies in a variety of styles and settings, all while maintaining full control over your creative process and privacy. With a user-friendly interface and secure data handling, GenSelfie is designed for creators who want to stand out and engage their audience in fresh, innovative ways.',
+    icon: '📸',
+    github: 'https://github.com/ValyrianTech/GenSelfie',
+    website: 'https://genselfie.com',
+    tags: ['AI', 'ComfyUI', 'FLUX', 'Influencers'],
+    features: ['AI-powered image generation', 'Multiple style presets', 'Bitcoin Lightning payments', 'Social media integration', 'Privacy-first design'],
+  },
+  {
+    name: 'Valyrian Spellbook',
+    description: 'An Open Source framework that combines the power of Artificial Intelligence and Blockchain technology, allowing you to create the back end of your applications with ease.',
+    longDescription: 'Whether you\'re an experienced developer or have no coding skills at all, Valyrian Spellbook lets you build your applications in a fraction of the time it would take to create them from scratch. Configure a REST API server with triggers and actions to automate your transactions. The Spellbook is the backbone of many Valyrian Tech projects—including SERENDIPITY, our own AI collective.',
+    icon: '📖',
+    github: 'https://github.com/ValyrianTech/ValyrianSpellbook',
+    tags: ['Framework', 'REST API', 'Bitcoin', 'Python'],
+    features: ['Configurable REST API', 'Trigger & action system', 'Bitcoin integration', 'Email handling', 'Authentication built-in'],
+  },
+  {
+    name: 'Hivemind Protocol',
+    description: 'A fairer way for teams, communities, or even friend groups to make decisions—without the chaos. Uses ranked choice voting with a Condorcet algorithm.',
+    longDescription: 'Hivemind Protocol uses ranked choice voting, so you can list your favorites in order. The system then finds the option that best reflects the group\'s true preferences—no more "winner takes all" or wasted votes. Data lives on IPFS, votes are signed with Bitcoin keys, and every step is open and verifiable.',
+    icon: '🐝',
+    github: 'https://github.com/ValyrianTech/hivemind-python',
+    tags: ['Voting', 'IPFS', 'Bitcoin', 'Decentralized'],
+    features: ['Ranked choice voting', 'Condorcet algorithm', 'IPFS storage', 'Cryptographic proof', 'Tamper-evident'],
+  },
+  {
+    name: 'IPFSDictChain',
+    description: 'Python dictionaries that live on IPFS. Portable, tamper-proof, and globally accessible data storage.',
+    longDescription: 'With IPFSDictChain, your Python dictionaries become portable, tamper-proof, and globally accessible—thanks to IPFS. Add .save() to push your data to IPFS instantly. Use .load(cid) to bring it back—anywhere, anytime. Every version is content-addressed, so nothing gets lost or overwritten.',
+    icon: '🔗',
+    github: 'https://github.com/ValyrianTech/ipfs_dict_chain',
+    tags: ['IPFS', 'Python', 'Decentralized', 'Storage'],
+    features: ['Dict-like interface', 'IPFS storage', 'Version history', 'Content addressing', 'Audit trails'],
+  },
+  {
+    name: 'HexGlobe',
+    description: 'The world reimagined in hexagons. A platform for geo-data apps, games, and visualizations powered by Uber\'s H3 library.',
+    longDescription: 'HexGlobe brings natural elegance to digital maps, offering smoother navigation, better connectivity, and less distortion than traditional square grids. Each hexagon is a "tile" you can fill with content, data, or interactive features. Perfect for strategy games, data visualization, urban planning, or teaching geography.',
+    icon: '🌍',
+    github: 'https://github.com/ValyrianTech/HexGlobe',
+    tags: ['Maps', 'H3', 'Visualization', 'Games'],
+    features: ['Hexagonal grid system', 'Uber H3 powered', 'Zoom & pan', 'Mod system', 'Open for frontends'],
+  },
+  {
+    name: 'Bitcoin Message Signer',
+    description: 'Mobile app for cryptographic message signing. Prove it\'s really you with Bitcoin keys—no middlemen, no tracking.',
+    longDescription: 'With Bitcoin Message Signer, you simply scan a QR code, pick which Bitcoin key you want to use, and the app signs your message with a unique cryptographic signature. Instantly, that signature is sent to any website or service you choose—no fuss, no middlemen, and absolutely no tracking.',
+    icon: '🔐',
+    github: 'https://github.com/ValyrianTech/BitcoinMessageSigner',
+    tags: ['Mobile', 'Bitcoin', 'Security', 'Privacy'],
+    features: ['QR code scanning', 'Multiple key support', 'Webhook integration', 'No tracking', 'Open source'],
+  },
+  {
+    name: 'Valyrian Games Leaderboard',
+    description: 'An automated LLM benchmark where AI models compete in coding challenges. TrueSkill rankings, transparent results, live updates.',
+    longDescription: 'The digital arena where large language models go head-to-head, and only the best rise to the top! Each model faces the same challenges—like writing the shortest code, solving tricky puzzles, or answering tough questions. Their performances are scored, ranked, and displayed for all to see.',
+    icon: '🏆',
+    github: 'https://github.com/ValyrianTech/ValyrianGamesLeaderboard',
+    website: 'https://valyriantech.github.io/ValyrianGamesLeaderboard/',
+    tags: ['AI', 'Benchmarks', 'LLM', 'Competition'],
+    features: ['TrueSkill rankings', 'Automated games', 'Interactive charts', 'GitHub Actions', 'Open data'],
+  },
+  {
+    name: 'Runpod Templates',
+    description: 'One-click deploy solutions for AI tools. Ready-to-go Docker containers for ComfyUI, Text-generation-webui, TTS servers, and more.',
+    longDescription: 'Setting up advanced AI software can be tricky—installing dependencies, configuring servers, and troubleshooting errors. With Runpod templates, all that complexity disappears. Each template is a ready-to-go Docker container: just pick the tool you want, click "deploy," and you\'re up and running in minutes.',
+    icon: '🚀',
+    github: 'https://github.com/ValyrianTech/ComfyUI_with_Flux',
+    website: 'https://runpod.io?ref=2vdt3dn9',
+    tags: ['Docker', 'AI', 'ComfyUI', 'TTS'],
+    features: ['One-click deploy', 'ComfyUI + FLUX', 'Text-generation-webui', 'F5-TTS server', 'ACE-Step music'],
+  },
+];
+---
+
+<BaseLayout title="Projects" description="Explore Valyrian Tech's open source projects - AI tools, blockchain solutions, and developer frameworks.">
+  <!-- Hero -->
+  <section class="pt-24 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-valyrian-100 mb-6">
+        Open Source <span class="text-gradient">Projects</span>
+      </h1>
+      <p class="text-lg text-valyrian-300 max-w-2xl mx-auto">
+        All tools are free and open source. Explore, contribute, fork, and build something amazing.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects List -->
+  <section class="pb-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-8">
+        {projects.map((project, index) => (
+          <div class="glass-card p-8 relative overflow-hidden group">
+            <!-- Background accent -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-magic-purple/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true"></div>
+            
+            <div class="relative z-10 grid lg:grid-cols-3 gap-8">
+              <!-- Main Info -->
+              <div class="lg:col-span-2">
+                <div class="flex items-start gap-4 mb-4">
+                  <span class="text-5xl">{project.icon}</span>
+                  <div>
+                    <h2 class="font-display text-2xl md:text-3xl font-bold text-valyrian-100">{project.name}</h2>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                      {project.tags.map((tag) => (
+                        <span class="px-2 py-1 text-xs rounded-md bg-valyrian-700/50 text-valyrian-300 border border-valyrian-600/50">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p class="text-valyrian-200 mb-4">{project.description}</p>
+                <p class="text-valyrian-300 text-sm">{project.longDescription}</p>
+                
+                <!-- Links -->
+                <div class="flex flex-wrap gap-4 mt-6">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" class="btn-primary">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    View on GitHub
+                  </a>
+                  {project.website && (
+                    <a href={project.website} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      Visit Website
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              <!-- Features -->
+              <div class="lg:border-l lg:border-valyrian-600/30 lg:pl-8">
+                <h3 class="font-display text-lg font-semibold text-valyrian-100 mb-4">Key Features</h3>
+                <ul class="space-y-2">
+                  {project.features.map((feature) => (
+                    <li class="flex items-center gap-2 text-sm text-valyrian-300">
+                      <svg class="w-4 h-4 text-magic-glow flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Projects -->
+  <section class="py-16 bg-valyrian-800/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-valyrian-100 mb-8 text-center">
+        More Docker Templates & Tools
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="https://github.com/ValyrianTech/ComfyUI_with_Flux" target="_blank" rel="noopener noreferrer" class="glass-card-hover p-4 text-center">
+          <div class="text-2xl mb-2">🎨</div>
+          <div class="font-medium text-valyrian-100">ComfyUI + FLUX</div>
+          <div class="text-xs text-valyrian-400">Image Generation</div>
+        </a>
+        <a href="https://github.com/ValyrianTech/text-generation-webui_docker" target="_blank" rel="noopener noreferrer" class="glass-card-hover p-4 text-center">
+          <div class="text-2xl mb-2">💬</div>
+          <div class="font-medium text-valyrian-100">Text-gen-webui</div>
+          <div class="text-xs text-valyrian-400">LLM Interface</div>
+        </a>
+        <a href="https://github.com/ValyrianTech/F5-TTS_server" target="_blank" rel="noopener noreferrer" class="glass-card-hover p-4 text-center">
+          <div class="text-2xl mb-2">🎙️</div>
+          <div class="font-medium text-valyrian-100">F5-TTS Server</div>
+          <div class="text-xs text-valyrian-400">Text to Speech</div>
+        </a>
+        <a href="https://github.com/ValyrianTech/OpenVoice_server" target="_blank" rel="noopener noreferrer" class="glass-card-hover p-4 text-center">
+          <div class="text-2xl mb-2">🔊</div>
+          <div class="font-medium text-valyrian-100">OpenVoice Server</div>
+          <div class="text-xs text-valyrian-400">Voice Cloning</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl font-bold text-valyrian-100 mb-4">
+        Want to Contribute?
+      </h2>
+      <p class="text-lg text-valyrian-300 mb-8">
+        All projects welcome contributions. Check out the repositories, open issues, submit PRs, or just star your favorites!
+      </p>
+      <a href="https://github.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-primary text-lg px-8 py-4">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        Visit ValyrianTech on GitHub
+      </a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+
+const posts = [
+  {
+    title: 'Welcome to the New Era of Valyrian Tech: Where Passion Meets Innovation',
+    slug: 'welcome-to-the-new-era',
+    date: 'December 20, 2025',
+    excerpt: 'Every great story begins with a spark—a moment of inspiration that sets everything in motion. For Wouter Glorieux, founder of Valyrian Tech, that spark was a lifelong love of programming...',
+    categories: ['Valyrian Tech', 'SERENDIPITY'],
+  },
+  {
+    title: 'GenSelfie: Where Fans and Influencers Meet—In AI Style!',
+    slug: 'genselfie',
+    date: 'December 20, 2025',
+    excerpt: 'Ever dreamed of snapping a selfie with your favorite influencer, even if you\'re worlds apart? With GenSelfie, that dream is now just a click away...',
+    categories: ['GenSelfie', 'ComfyUI'],
+  },
+  {
+    title: 'Runpod Templates: One-Click Magic for AI and Creativity',
+    slug: 'runpod-templates',
+    date: 'December 20, 2025',
+    excerpt: 'Ever wish you could summon powerful AI tools—like image generators, text models, or music makers—with just a click of your mouse?',
+    categories: ['Docker', 'ComfyUI', 'TTS'],
+  },
+  {
+    title: 'Valyrian Games Leaderboard: Where AIs Compete for Glory',
+    slug: 'valyrian-games-leaderboard',
+    date: 'December 20, 2025',
+    excerpt: 'Ever wondered which AI language model is the true champion at coding, problem-solving, or creative challenges?',
+    categories: ['Valyrian Games', 'AI'],
+  },
+  {
+    title: 'HexGlobe: The World, Reimagined—One Hexagon at a Time',
+    slug: 'hexglobe',
+    date: 'December 20, 2025',
+    excerpt: 'What if you could look at the world not as a patchwork of squares, but as a seamless mosaic of hexagons?',
+    categories: ['HexGlobe'],
+  },
+  {
+    title: 'Hivemind Protocol: Collective Decisions, Reinvented',
+    slug: 'hivemind-protocol',
+    date: 'December 20, 2025',
+    excerpt: 'What if you could organize a group vote—on anything—without trusting a central authority, and with every step open for anyone to verify?',
+    categories: ['Hivemind Protocol', 'IPFS'],
+  },
+  {
+    title: 'Unlocking Trust: Sign Anything, Prove Everything',
+    slug: 'bitcoin-message-signer',
+    date: 'December 20, 2025',
+    excerpt: 'Ever wished you could prove you really said something—without anyone having to just "take your word for it"?',
+    categories: ['BitcoinMessageSigner', 'Bitcoin'],
+  },
+  {
+    title: 'ipfs_dict_chain: Your Data\'s Adventure on the Decentralized Web',
+    slug: 'ipfs-dict-chain',
+    date: 'December 20, 2025',
+    excerpt: 'Imagine if your favorite notebook could magically make copies of itself, store them in a library that everyone can access...',
+    categories: ['IPFSDictChain', 'IPFS'],
+  },
+  {
+    title: 'Introducing the Valyrian Spellbook: The Developer\'s Secret Weapon',
+    slug: 'valyrian-spellbook',
+    date: 'December 20, 2025',
+    excerpt: 'Imagine you\'re about to bake a cake. Every time, you have to measure out the flour, crack the eggs, and mix the batter from scratch...',
+    categories: ['Valyrian Spellbook'],
+  },
+];
+
+const categories = [...new Set(posts.flatMap(p => p.categories))].sort();
+---
+
+<BaseLayout title="Blog" description="Updates, tutorials, and insights from Grace and the Valyrian Tech team on AI, blockchain, and open source development.">
+  <!-- Hero -->
+  <section class="pt-24 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-valyrian-100 mb-6">
+        The <span class="text-gradient">Blog</span>
+      </h1>
+      <p class="text-lg text-valyrian-300 max-w-2xl mx-auto">
+        Updates, tutorials, and insights from Grace and the Valyrian Tech team.
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog Content -->
+  <section class="pb-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-4 gap-8">
+        <!-- Posts -->
+        <div class="lg:col-span-3 space-y-6">
+          {posts.map((post) => (
+            <a href={`${baseUrl}blog/${post.slug}`} class="glass-card-hover p-6 block group">
+              <div class="flex flex-wrap gap-2 mb-3">
+                {post.categories.map((cat) => (
+                  <span class="px-2 py-1 text-xs rounded-md bg-magic-purple/20 text-magic-glow border border-magic-purple/30">{cat}</span>
+                ))}
+              </div>
+              <div class="text-sm text-valyrian-400 mb-2">{post.date}</div>
+              <h2 class="font-display text-xl md:text-2xl font-semibold text-valyrian-100 mb-3 group-hover:text-magic-glow transition-colors">
+                {post.title}
+              </h2>
+              <p class="text-valyrian-300">{post.excerpt}</p>
+              <div class="mt-4 text-magic-glow text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                Read more
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-1">
+          <div class="glass-card p-6 sticky top-24">
+            <h3 class="font-display text-lg font-semibold text-valyrian-100 mb-4">Categories</h3>
+            <div class="flex flex-wrap gap-2">
+              {categories.map((cat) => (
+                <span class="px-2 py-1 text-xs rounded-md bg-valyrian-700/50 text-valyrian-300 border border-valyrian-600/50 hover:border-magic-purple/50 hover:text-magic-glow transition-colors cursor-pointer">
+                  {cat}
+                </span>
+              ))}
+            </div>
+
+            <hr class="border-valyrian-600/30 my-6" />
+
+            <h3 class="font-display text-lg font-semibold text-valyrian-100 mb-4">Author</h3>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-dragon-gold to-dragon-fire flex items-center justify-center">
+                <span class="text-xl">👑</span>
+              </div>
+              <div>
+                <div class="font-medium text-valyrian-100">Grace Penelope Targaryen</div>
+                <div class="text-xs text-valyrian-400">Fourth of Her Name</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
