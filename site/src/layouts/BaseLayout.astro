@@ -7,7 +7,8 @@ interface Props {
 }
 
 const { title, description = "Valyrian Tech - AI & Blockchain Sorcery. Open source tools for the future." } = Astro.props;
-const baseUrl = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL;
+const baseUrl = base.endsWith('/') ? base : `${base}/`;
 ---
 
 <!DOCTYPE html>
