@@ -1,0 +1,24 @@
+# dependencies
+node_modules/
+
+# build output
+site/dist/
+site/.astro/
+
+# environment variables
+.env
+.env.production
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+
+# content folder (not part of site)
+content/

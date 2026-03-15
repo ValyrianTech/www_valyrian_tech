@@ -6,6 +6,6 @@ import mdx from '@astrojs/mdx';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://valyriantech.github.io',
-  // base: '/www_valyrian_tech',  // Uncomment for GitHub Pages deployment
+  base: '/www_valyrian_tech',
   integrations: [tailwind(), mdx()],
 });
