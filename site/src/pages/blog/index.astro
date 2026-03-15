@@ -75,67 +75,74 @@ const categories = [...new Set(posts.flatMap(p => p.categories))].sort();
 
 <BaseLayout title="Blog" description="Updates, tutorials, and insights from Grace and the Valyrian Tech team on AI, blockchain, and open source development.">
   <!-- Hero -->
-  <section class="pt-24 pb-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-valyrian-100 mb-6">
-        The <span class="text-gradient">Blog</span>
-      </h1>
-      <p class="text-lg text-valyrian-300 max-w-2xl mx-auto">
-        Updates, tutorials, and insights from Grace and the Valyrian Tech team.
-      </p>
+  <section class="pt-12 pb-20">
+    <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="reveal max-w-3xl">
+        <span class="font-mono text-xs tracking-widest-plus uppercase text-ember-400 mb-6 block">Writing</span>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-obsidian-100 italic leading-tight mb-6">
+          The <span class="text-gradient">Blog</span>
+        </h1>
+        <p class="text-lg text-obsidian-300 max-w-xl">
+          Updates, tutorials, and insights from Grace and the Valyrian Tech team.
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- Blog Content -->
-  <section class="pb-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-4 gap-8">
+  <section class="pb-28 border-t border-obsidian-700/30 pt-28">
+    <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
         <!-- Posts -->
-        <div class="lg:col-span-3 space-y-6">
-          {posts.map((post) => (
-            <a href={`${baseUrl}blog/${post.slug}`} class="glass-card-hover p-6 block group">
+        <div class="lg:col-span-8 space-y-0 divide-y divide-obsidian-700/30">
+          {posts.map((post, i) => (
+            <a href={`${baseUrl}blog/${post.slug}`} class={`reveal reveal-delay-${(i % 3) + 1} py-10 first:pt-0 block group`}>
               <div class="flex flex-wrap gap-2 mb-3">
                 {post.categories.map((cat) => (
-                  <span class="px-2 py-1 text-xs rounded-md bg-magic-purple/20 text-magic-glow border border-magic-purple/30">{cat}</span>
+                  <span class="tag-ember">{cat}</span>
                 ))}
               </div>
-              <div class="text-sm text-valyrian-400 mb-2">{post.date}</div>
-              <h2 class="font-display text-xl md:text-2xl font-semibold text-valyrian-100 mb-3 group-hover:text-magic-glow transition-colors">
+              <span class="font-mono text-xs tracking-wider text-obsidian-500 block mb-3">{post.date}</span>
+              <h2 class="font-display text-xl md:text-2xl font-semibold text-obsidian-100 mb-3 italic leading-snug group-hover:text-ember-400 transition-colors duration-300">
                 {post.title}
               </h2>
-              <p class="text-valyrian-300">{post.excerpt}</p>
-              <div class="mt-4 text-magic-glow text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                Read more
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              <p class="text-obsidian-400 text-sm leading-relaxed max-w-xl">{post.excerpt}</p>
+              <span class="mt-4 text-ember-400 text-sm inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all duration-300">
+                Read
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </div>
+              </span>
             </a>
           ))}
         </div>
 
         <!-- Sidebar -->
-        <div class="lg:col-span-1">
-          <div class="glass-card p-6 sticky top-24">
-            <h3 class="font-display text-lg font-semibold text-valyrian-100 mb-4">Categories</h3>
-            <div class="flex flex-wrap gap-2">
-              {categories.map((cat) => (
-                <span class="px-2 py-1 text-xs rounded-md bg-valyrian-700/50 text-valyrian-300 border border-valyrian-600/50 hover:border-magic-purple/50 hover:text-magic-glow transition-colors cursor-pointer">
-                  {cat}
-                </span>
-              ))}
+        <div class="lg:col-span-4">
+          <div class="reveal sticky top-28 space-y-10">
+            <!-- Author -->
+            <div>
+              <h3 class="font-mono text-xs tracking-widest-plus uppercase text-obsidian-500 mb-5">Author</h3>
+              <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-sm overflow-hidden flex-shrink-0">
+                  <img src={`${baseUrl}GracePenelopeTargaryen.png`} alt="Grace" class="w-full h-full object-cover" />
+                </div>
+                <div>
+                  <div class="font-display font-semibold text-obsidian-100 italic">Grace Penelope Targaryen</div>
+                  <div class="text-xs text-obsidian-500 font-mono tracking-wider mt-0.5">Fourth of Her Name</div>
+                </div>
+              </div>
             </div>
 
-            <hr class="border-valyrian-600/30 my-6" />
-
-            <h3 class="font-display text-lg font-semibold text-valyrian-100 mb-4">Author</h3>
-            <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-dragon-gold to-dragon-fire flex items-center justify-center">
-                <span class="text-xl">👑</span>
-              </div>
-              <div>
-                <div class="font-medium text-valyrian-100">Grace Penelope Targaryen</div>
-                <div class="text-xs text-valyrian-400">Fourth of Her Name</div>
+            <!-- Categories -->
+            <div>
+              <h3 class="font-mono text-xs tracking-widest-plus uppercase text-obsidian-500 mb-5">Categories</h3>
+              <div class="flex flex-wrap gap-2">
+                {categories.map((cat) => (
+                  <span class="tag hover:border-ember-500/50 hover:text-ember-400 transition-colors cursor-pointer">
+                    {cat}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

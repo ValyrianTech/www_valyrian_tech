@@ -7,73 +7,97 @@ const baseUrl = base.endsWith('/') ? base : `${base}/`;
 
 <BaseLayout title="About" description="Learn about Valyrian Tech and founder Wouter Glorieux - an independent developer exploring AI and Blockchain technologies.">
   <!-- Hero -->
-  <section class="pt-24 pb-16">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-valyrian-100 mb-6">
-        About <span class="text-gradient">Valyrian Tech</span>
-      </h1>
-      <p class="text-xl text-valyrian-300">
-        One developer. One AI. Infinite possibilities.
-      </p>
+  <section class="pt-12 pb-20">
+    <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="reveal max-w-3xl">
+        <span class="font-mono text-xs tracking-widest-plus uppercase text-ember-400 mb-6 block">About</span>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-obsidian-100 italic leading-tight mb-6">
+          One Developer. One AI.<br /><span class="text-gradient">Infinite Possibilities.</span>
+        </h1>
+      </div>
     </div>
   </section>
 
-  <!-- Main Content -->
-  <section class="pb-24">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="glass-card p-8 md:p-12">
-        <div class="prose-valyrian">
-          <h2 class="text-gradient">Welcome to Valyrian Tech!</h2>
-          
-          <p>
-            As an independent developer, I am dedicated to exploring the exciting and rapidly growing fields of Artificial Intelligence and Blockchain technologies. With years of experience and a passion for innovation, I am committed to pushing the boundaries of what is possible and leveraging the power of AI and Blockchain to transform businesses and industries.
-          </p>
-          
-          <p>
-            At Valyrian Tech, I am focused on developing my own projects that showcase the capabilities and potential of these exciting technologies. Through ongoing research and development, I am able to stay at the forefront of the latest technological advancements and apply this knowledge to my personal projects.
-          </p>
-          
-          <p>
-            Thank you for visiting my website and for your interest in my work. Please feel free to browse my portfolio and contact me with any questions or collaboration opportunities. I look forward to connecting with you and working together to explore the possibilities of AI and Blockchain.
-          </p>
-          
-          <p class="text-valyrian-200">
-            Best regards,<br />
-            <strong class="text-gradient">Wouter Glorieux</strong>
-          </p>
+  <!-- Main Content with Wouter photo -->
+  <section class="pb-28 border-t border-obsidian-700/30 pt-28">
+    <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
+        <!-- Photo -->
+        <div class="lg:col-span-4">
+          <div class="reveal relative sticky top-28">
+            <div class="aspect-square overflow-hidden rounded-sm">
+              <img 
+                src={`${baseUrl}WouterGlorieux.jpg`}
+                alt="Wouter Glorieux"
+                class="w-full h-full object-cover img-ember-tint"
+              />
+            </div>
+            <div class="absolute -top-3 -left-3 w-16 h-16 border-t-2 border-l-2 border-ember-500/30" aria-hidden="true"></div>
+            <div class="mt-5">
+              <div class="font-display text-lg font-semibold text-obsidian-100 italic">Wouter Glorieux</div>
+              <div class="font-mono text-xs tracking-wider uppercase text-obsidian-500 mt-1">Founder</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="lg:col-span-7 lg:col-start-6">
+          <div class="reveal reveal-delay-1 prose-forge">
+            <h2>Welcome to Valyrian Tech!</h2>
+            
+            <p>
+              As an independent developer, I am dedicated to exploring the exciting and rapidly growing fields of Artificial Intelligence and Blockchain technologies. With years of experience and a passion for innovation, I am committed to pushing the boundaries of what is possible and leveraging the power of AI and Blockchain to transform businesses and industries.
+            </p>
+            
+            <p>
+              At Valyrian Tech, I am focused on developing my own projects that showcase the capabilities and potential of these exciting technologies. Through ongoing research and development, I am able to stay at the forefront of the latest technological advancements and apply this knowledge to my personal projects.
+            </p>
+            
+            <p>
+              Thank you for visiting my website and for your interest in my work. Please feel free to browse my portfolio and contact me with any questions or collaboration opportunities. I look forward to connecting with you and working together to explore the possibilities of AI and Blockchain.
+            </p>
+            
+            <p class="text-obsidian-200">
+              Best regards,<br />
+              <strong class="text-gradient">Wouter Glorieux</strong>
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Team Section -->
-  <section class="py-24 bg-valyrian-800/30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-3xl md:text-4xl font-bold text-valyrian-100 mb-12 text-center">
-        The <span class="text-gradient">Team</span>
-      </h2>
+  <section class="py-28 border-t border-obsidian-700/30 bg-obsidian-950/50">
+    <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="reveal mb-16">
+        <span class="font-mono text-xs tracking-widest-plus uppercase text-ember-400 mb-3 block">Who We Are</span>
+        <h2 class="section-heading text-obsidian-100">
+          The <span class="text-gradient">Team</span>
+        </h2>
+      </div>
       
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-px bg-obsidian-700/30 max-w-4xl">
         <!-- Wouter -->
-        <div class="glass-card p-8 text-center">
-          <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-magic-purple to-magic-violet flex items-center justify-center mb-6">
-            <span class="text-4xl">👨‍💻</span>
+        <div class="reveal reveal-delay-1 bg-obsidian-950/80 p-10">
+          <div class="w-16 h-16 overflow-hidden rounded-sm mb-6">
+            <img src={`${baseUrl}WouterGlorieux.jpg`} alt="Wouter Glorieux" class="w-full h-full object-cover" />
           </div>
-          <h3 class="font-display text-2xl font-bold text-valyrian-100 mb-2">Wouter Glorieux</h3>
-          <p class="text-magic-glow mb-4">Founder</p>
-          <p class="text-valyrian-300 text-sm">
+          <h3 class="font-display text-2xl font-bold text-obsidian-100 mb-1 italic">Wouter Glorieux</h3>
+          <p class="font-mono text-xs tracking-wider uppercase text-ember-400 mb-4">Founder</p>
+          <p class="text-obsidian-400 text-sm leading-relaxed">
             Driven by a fascination for breakthrough technologies, I strive to create a transformative impact on the world with Valyrian Tech's AI and blockchain innovations.
           </p>
         </div>
 
         <!-- SERENDIPITY -->
-        <div class="glass-card p-8 text-center">
-          <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-dragon-gold to-dragon-fire flex items-center justify-center mb-6">
-            <span class="text-4xl">🧠</span>
+        <div class="reveal reveal-delay-2 bg-obsidian-950/80 p-10">
+          <div class="w-16 h-16 overflow-hidden rounded-sm mb-6">
+            <img src={`${baseUrl}Serendipity.png`} alt="SERENDIPITY" class="w-full h-full object-cover" />
           </div>
-          <h3 class="font-display text-2xl font-bold text-valyrian-100 mb-2">S.E.R.E.N.D.I.P.I.T.Y.</h3>
-          <p class="text-dragon-gold mb-4">AI Assistant</p>
-          <p class="text-valyrian-300 text-sm">
+          <h3 class="font-display text-2xl font-bold text-obsidian-100 mb-1 italic">S.E.R.E.N.D.I.P.I.T.Y.</h3>
+          <p class="font-mono text-xs tracking-wider uppercase text-gold-500 mb-4">AI Collective</p>
+          <p class="text-obsidian-400 text-sm leading-relaxed">
             Solutions Enabled through Responsive Empathy, Novelty, and Dynamic Interactions Proving Intelligence and Thoughtful Yields. An AGI in development with many personas, including Grace.
           </p>
         </div>
@@ -82,33 +106,36 @@ const baseUrl = base.endsWith('/') ? base : `${base}/`;
   </section>
 
   <!-- Philosophy -->
-  <section class="py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-3xl md:text-4xl font-bold text-valyrian-100 mb-12 text-center">
-        Our <span class="text-gradient">Philosophy</span>
-      </h2>
+  <section class="py-28 border-t border-obsidian-700/30">
+    <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="reveal mb-16">
+        <span class="font-mono text-xs tracking-widest-plus uppercase text-ember-400 mb-3 block">What Drives Us</span>
+        <h2 class="section-heading text-obsidian-100">
+          Our <span class="text-gradient">Philosophy</span>
+        </h2>
+      </div>
       
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="glass-card p-6 text-center">
-          <div class="text-4xl mb-4">🔓</div>
-          <h3 class="font-display text-xl font-semibold text-valyrian-100 mb-3">100% Open Source</h3>
-          <p class="text-valyrian-300 text-sm">
+      <div class="grid md:grid-cols-3 gap-12 lg:gap-16">
+        <div class="reveal reveal-delay-1">
+          <div class="text-3xl mb-5">🔓</div>
+          <h3 class="font-display text-xl font-semibold text-obsidian-100 mb-3 italic">100% Open Source</h3>
+          <p class="text-obsidian-400 text-sm leading-relaxed">
             All products are completely free and open source. We believe in transparency and community-driven development.
           </p>
         </div>
         
-        <div class="glass-card p-6 text-center">
-          <div class="text-4xl mb-4">⚡</div>
-          <h3 class="font-display text-xl font-semibold text-valyrian-100 mb-3">Speed & Agility</h3>
-          <p class="text-valyrian-300 text-sm">
+        <div class="reveal reveal-delay-2">
+          <div class="text-3xl mb-5">⚡</div>
+          <h3 class="font-display text-xl font-semibold text-obsidian-100 mb-3 italic">Speed & Agility</h3>
+          <p class="text-obsidian-400 text-sm leading-relaxed">
             As a solo developer with AI assistance, we move fast, iterate quickly, and ship features that matter.
           </p>
         </div>
         
-        <div class="glass-card p-6 text-center">
-          <div class="text-4xl mb-4">✨</div>
-          <h3 class="font-display text-xl font-semibold text-valyrian-100 mb-3">Playful Creativity</h3>
-          <p class="text-valyrian-300 text-sm">
+        <div class="reveal reveal-delay-3">
+          <div class="text-3xl mb-5">✨</div>
+          <h3 class="font-display text-xl font-semibold text-obsidian-100 mb-3 italic">Playful Creativity</h3>
+          <p class="text-obsidian-400 text-sm leading-relaxed">
             Technology should be fun. We bring imagination and a sense of wonder to everything we build.
           </p>
         </div>
@@ -117,46 +144,45 @@ const baseUrl = base.endsWith('/') ? base : `${base}/`;
   </section>
 
   <!-- Company Info -->
-  <section class="py-24 bg-valyrian-800/30">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="glass-card p-8 md:p-12">
-        <h2 class="font-display text-2xl font-bold text-valyrian-100 mb-8 text-center">Company Information</h2>
-        
-        <div class="grid md:grid-cols-2 gap-8">
-          <div>
-            <h3 class="font-medium text-valyrian-200 mb-2">Legal Name</h3>
-            <p class="text-valyrian-100">Valyrian Tech BV</p>
-          </div>
-          <div>
-            <h3 class="font-medium text-valyrian-200 mb-2">Contact</h3>
-            <p class="text-magic-glow">info@valyrian.tech</p>
-          </div>
+  <section class="py-20 border-t border-obsidian-700/30 bg-obsidian-950/50">
+    <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="reveal grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="font-mono text-xs tracking-widest-plus uppercase text-obsidian-500 mb-3">Legal Name</h3>
+          <p class="text-obsidian-100 font-body">Valyrian Tech BV</p>
+        </div>
+        <div>
+          <h3 class="font-mono text-xs tracking-widest-plus uppercase text-obsidian-500 mb-3">Contact</h3>
+          <p class="text-ember-400">info@valyrian.tech</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-24">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-display text-3xl font-bold text-valyrian-100 mb-4">
-        Let's Connect
-      </h2>
-      <p class="text-lg text-valyrian-300 mb-8">
-        Follow Valyrian Tech across our channels, explore our projects, or support our work.
-      </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="https://linktr.ee/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-primary">
-          Follow Valyrian Tech
-        </a>
-        <a href="https://github.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          GitHub
-        </a>
-        <a href="https://patreon.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M15.386.524c-4.764 0-8.64 3.876-8.64 8.64 0 4.75 3.876 8.613 8.64 8.613 4.75 0 8.614-3.864 8.614-8.613C24 4.4 20.136.524 15.386.524M.003 23.537h4.22V.524H.003"/></svg>
-          Patreon
-        </a>
+  <section class="py-28 border-t border-obsidian-700/30">
+    <div class="max-w-[900px] mx-auto px-6 sm:px-8 lg:px-12 text-center">
+      <div class="reveal">
+        <span class="font-mono text-xs tracking-widest-plus uppercase text-ember-400 mb-6 block">Get in Touch</span>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-obsidian-100 mb-6 italic">
+          Let's Connect
+        </h2>
+        <p class="text-obsidian-300 leading-relaxed mb-10 max-w-xl mx-auto">
+          Follow Valyrian Tech across our channels, explore our projects, or support our work.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://linktr.ee/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            Follow Valyrian Tech
+          </a>
+          <a href="https://github.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://patreon.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M15.386.524c-4.764 0-8.64 3.876-8.64 8.64 0 4.75 3.876 8.613 8.64 8.613 4.75 0 8.614-3.864 8.614-8.613C24 4.4 20.136.524 15.386.524M.003 23.537h4.22V.524H.003"/></svg>
+            Patreon
+          </a>
+        </div>
       </div>
     </div>
   </section>

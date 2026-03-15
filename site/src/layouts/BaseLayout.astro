@@ -6,7 +6,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Valyrian Tech - AI & Blockchain Sorcery. Open source tools for the future." } = Astro.props;
+const { title, description = "Valyrian Tech — AI & Blockchain. Open source tools forged for the future." } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const baseUrl = base.endsWith('/') ? base : `${base}/`;
 ---
@@ -21,132 +21,179 @@ const baseUrl = base.endsWith('/') ? base : `${base}/`;
     <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
     <title>{title} | Valyrian Tech</title>
   </head>
-  <body class="min-h-screen flex flex-col">
-    <!-- Particle Background -->
-    <div class="particles-bg" aria-hidden="true">
-      {Array.from({ length: 30 }).map((_, i) => (
-        <div 
-          class="particle" 
-          style={`left: ${Math.random() * 100}%; animation-delay: ${Math.random() * 15}s; animation-duration: ${15 + Math.random() * 10}s;`}
-        />
-      ))}
-    </div>
+  <body class="min-h-screen flex flex-col grain-overlay warm-vignette">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-valyrian-900/80 backdrop-blur-lg border-b border-valyrian-700/50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
+    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" id="main-nav">
+      <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="flex items-center justify-between h-20">
           <!-- Logo -->
-          <a href={baseUrl} class="flex items-center gap-3 group">
-            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-magic-purple to-magic-violet flex items-center justify-center group-hover:animate-glow-pulse transition-all">
-              <span class="text-white font-display font-bold text-xl">V</span>
+          <a href={baseUrl} class="flex items-center gap-4 group">
+            <img 
+              src={`${baseUrl}LogoTransparent.png`} 
+              alt="Valyrian Tech" 
+              class="w-9 h-9 transition-transform duration-500 group-hover:rotate-6"
+            />
+            <div class="hidden sm:flex flex-col">
+              <span class="font-display text-lg font-semibold text-obsidian-100 tracking-wide italic">Valyrian Tech</span>
             </div>
-            <span class="font-display text-xl font-semibold text-valyrian-100 hidden sm:block">Valyrian Tech</span>
           </a>
 
           <!-- Desktop Navigation -->
-          <div class="hidden md:flex items-center gap-8">
-            <a href={baseUrl} class="link-glow text-sm font-medium">Home</a>
-            <a href={`${baseUrl}projects`} class="link-glow text-sm font-medium">Projects</a>
-            <a href={`${baseUrl}grace`} class="link-glow text-sm font-medium">Grace</a>
-            <a href={`${baseUrl}blog`} class="link-glow text-sm font-medium">Blog</a>
-            <a href={`${baseUrl}about`} class="link-glow text-sm font-medium">About</a>
+          <div class="hidden md:flex items-center gap-10">
+            <a href={baseUrl} class="link-ember text-sm font-body font-medium tracking-wider uppercase">Home</a>
+            <a href={`${baseUrl}projects`} class="link-ember text-sm font-body font-medium tracking-wider uppercase">Projects</a>
+            <a href={`${baseUrl}grace`} class="link-ember text-sm font-body font-medium tracking-wider uppercase">Grace</a>
+            <a href={`${baseUrl}blog`} class="link-ember text-sm font-body font-medium tracking-wider uppercase">Blog</a>
+            <a href={`${baseUrl}about`} class="link-ember text-sm font-body font-medium tracking-wider uppercase">About</a>
           </div>
 
           <!-- CTA Buttons -->
-          <div class="hidden md:flex items-center gap-4">
-            <a href="https://github.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm py-2">
+          <div class="hidden md:flex items-center gap-3">
+            <a href="https://github.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm text-obsidian-300 hover:text-obsidian-100 transition-colors">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              GitHub
             </a>
-            <a href="https://patreon.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm py-2">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M15.386.524c-4.764 0-8.64 3.876-8.64 8.64 0 4.75 3.876 8.613 8.64 8.613 4.75 0 8.614-3.864 8.614-8.613C24 4.4 20.136.524 15.386.524M.003 23.537h4.22V.524H.003"/></svg>
+            <a href="https://patreon.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-primary text-xs py-2.5 px-5">
               Support
             </a>
           </div>
 
           <!-- Mobile Menu Button -->
-          <button id="mobile-menu-btn" class="md:hidden p-2 text-valyrian-300 hover:text-white transition-colors">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          <button id="mobile-menu-btn" class="md:hidden p-2 text-obsidian-300 hover:text-obsidian-100 transition-colors" aria-label="Toggle menu">
+            <svg class="w-6 h-6 menu-open" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="w-6 h-6 menu-close hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
       </div>
 
       <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-valyrian-800/95 backdrop-blur-lg border-t border-valyrian-700/50">
-        <div class="px-4 py-4 space-y-3">
-          <a href={baseUrl} class="block py-2 text-valyrian-200 hover:text-white transition-colors">Home</a>
-          <a href={`${baseUrl}projects`} class="block py-2 text-valyrian-200 hover:text-white transition-colors">Projects</a>
-          <a href={`${baseUrl}grace`} class="block py-2 text-valyrian-200 hover:text-white transition-colors">Grace</a>
-          <a href={`${baseUrl}blog`} class="block py-2 text-valyrian-200 hover:text-white transition-colors">Blog</a>
-          <a href={`${baseUrl}about`} class="block py-2 text-valyrian-200 hover:text-white transition-colors">About</a>
-          <div class="pt-4 flex gap-3">
-            <a href="https://github.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm py-2 flex-1 justify-center">GitHub</a>
-            <a href="https://patreon.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm py-2 flex-1 justify-center">Support</a>
+      <div id="mobile-menu" class="hidden md:hidden bg-obsidian-900/98 backdrop-blur-xl border-t border-obsidian-700/30">
+        <div class="px-6 py-8 space-y-1 max-w-[1400px] mx-auto">
+          <a href={baseUrl} class="block py-3 text-obsidian-200 hover:text-ember-400 transition-colors font-display text-2xl italic">Home</a>
+          <a href={`${baseUrl}projects`} class="block py-3 text-obsidian-200 hover:text-ember-400 transition-colors font-display text-2xl italic">Projects</a>
+          <a href={`${baseUrl}grace`} class="block py-3 text-obsidian-200 hover:text-ember-400 transition-colors font-display text-2xl italic">Grace</a>
+          <a href={`${baseUrl}blog`} class="block py-3 text-obsidian-200 hover:text-ember-400 transition-colors font-display text-2xl italic">Blog</a>
+          <a href={`${baseUrl}about`} class="block py-3 text-obsidian-200 hover:text-ember-400 transition-colors font-display text-2xl italic">About</a>
+          <div class="pt-6 flex gap-3">
+            <a href="https://github.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-secondary text-xs py-2.5 flex-1 justify-center">GitHub</a>
+            <a href="https://patreon.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-primary text-xs py-2.5 flex-1 justify-center">Support</a>
           </div>
         </div>
       </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="flex-grow pt-16">
+    <main class="flex-grow pt-20">
       <slot />
     </main>
 
     <!-- Footer -->
-    <footer class="bg-valyrian-800/50 border-t border-valyrian-700/50 mt-auto">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer class="mt-auto border-t border-obsidian-700/30">
+      <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+        <!-- Top section -->
+        <div class="py-16 grid grid-cols-1 md:grid-cols-12 gap-12">
           <!-- Brand -->
-          <div class="md:col-span-2">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-magic-purple to-magic-violet flex items-center justify-center">
-                <span class="text-white font-display font-bold text-xl">V</span>
-              </div>
-              <span class="font-display text-xl font-semibold">Valyrian Tech</span>
+          <div class="md:col-span-5">
+            <div class="flex items-center gap-3 mb-6">
+              <img 
+                src={`${baseUrl}LogoTransparent.png`} 
+                alt="Valyrian Tech" 
+                class="w-8 h-8"
+              />
+              <span class="font-display text-lg font-semibold text-obsidian-100 italic">Valyrian Tech</span>
             </div>
-            <p class="text-valyrian-300 text-sm max-w-md mb-4">
-              AI & Blockchain Sorcery. Building open source tools that empower creators and push the boundaries of what's possible.
+            <p class="text-obsidian-400 text-sm leading-relaxed max-w-sm mb-6">
+              AI & Blockchain. Open source tools forged for creators who push boundaries.
             </p>
-            <p class="text-valyrian-400 text-xs">
-              © {new Date().getFullYear()} Valyrian Tech BV. All rights reserved.
-            </p>
+            <div class="flex gap-4">
+              <a href="https://github.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="text-obsidian-500 hover:text-ember-400 transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+              <a href="https://patreon.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="text-obsidian-500 hover:text-ember-400 transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M15.386.524c-4.764 0-8.64 3.876-8.64 8.64 0 4.75 3.876 8.613 8.64 8.613 4.75 0 8.614-3.864 8.614-8.613C24 4.4 20.136.524 15.386.524M.003 23.537h4.22V.524H.003"/></svg>
+              </a>
+              <a href="https://linktr.ee/ValyrianTech" target="_blank" rel="noopener noreferrer" class="text-obsidian-500 hover:text-ember-400 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+              </a>
+            </div>
           </div>
 
           <!-- Links -->
-          <div>
-            <h4 class="font-display font-semibold text-valyrian-100 mb-4">Explore</h4>
-            <ul class="space-y-2 text-sm">
-              <li><a href={`${baseUrl}projects`} class="text-valyrian-300 hover:text-magic-glow transition-colors">Projects</a></li>
-              <li><a href={`${baseUrl}blog`} class="text-valyrian-300 hover:text-magic-glow transition-colors">Blog</a></li>
-              <li><a href={`${baseUrl}grace`} class="text-valyrian-300 hover:text-magic-glow transition-colors">Meet Grace</a></li>
-              <li><a href={`${baseUrl}about`} class="text-valyrian-300 hover:text-magic-glow transition-colors">About</a></li>
+          <div class="md:col-span-3 md:col-start-7">
+            <h4 class="font-mono text-xs tracking-widest-plus uppercase text-obsidian-500 mb-5">Explore</h4>
+            <ul class="space-y-3 text-sm">
+              <li><a href={`${baseUrl}projects`} class="text-obsidian-300 hover:text-ember-400 transition-colors">Projects</a></li>
+              <li><a href={`${baseUrl}blog`} class="text-obsidian-300 hover:text-ember-400 transition-colors">Blog</a></li>
+              <li><a href={`${baseUrl}grace`} class="text-obsidian-300 hover:text-ember-400 transition-colors">Meet Grace</a></li>
+              <li><a href={`${baseUrl}about`} class="text-obsidian-300 hover:text-ember-400 transition-colors">About</a></li>
             </ul>
           </div>
 
-          <!-- Connect -->
-          <div>
-            <h4 class="font-display font-semibold text-valyrian-100 mb-4">Connect</h4>
-            <ul class="space-y-2 text-sm">
-              <li><a href="https://github.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="text-valyrian-300 hover:text-magic-glow transition-colors">GitHub</a></li>
-              <li><a href="https://patreon.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="text-valyrian-300 hover:text-magic-glow transition-colors">Patreon</a></li>
-              <li><a href="https://linktr.ee/ValyrianTech" target="_blank" rel="noopener noreferrer" class="text-valyrian-300 hover:text-magic-glow transition-colors">Linktree</a></li>
-              <li><a href={`${baseUrl}privacy`} class="text-valyrian-300 hover:text-magic-glow transition-colors">Privacy Policy</a></li>
+          <!-- Legal -->
+          <div class="md:col-span-2">
+            <h4 class="font-mono text-xs tracking-widest-plus uppercase text-obsidian-500 mb-5">Legal</h4>
+            <ul class="space-y-3 text-sm">
+              <li><a href={`${baseUrl}privacy`} class="text-obsidian-300 hover:text-ember-400 transition-colors">Privacy</a></li>
+              <li><a href={`${baseUrl}policies`} class="text-obsidian-300 hover:text-ember-400 transition-colors">Policies</a></li>
             </ul>
           </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="py-6 border-t border-obsidian-800 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p class="text-obsidian-500 text-xs">
+            &copy; {new Date().getFullYear()} Valyrian Tech BV. All rights reserved.
+          </p>
+          <p class="text-obsidian-600 text-xs font-mono">
+            Forged with fire & code
+          </p>
         </div>
       </div>
     </footer>
 
     <script>
+      // Mobile menu toggle
       const menuBtn = document.getElementById('mobile-menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
+      const menuOpen = menuBtn?.querySelector('.menu-open');
+      const menuClose = menuBtn?.querySelector('.menu-close');
       
       menuBtn?.addEventListener('click', () => {
+        const isHidden = mobileMenu?.classList.contains('hidden');
         mobileMenu?.classList.toggle('hidden');
+        menuOpen?.classList.toggle('hidden');
+        menuClose?.classList.toggle('hidden');
       });
+
+      // Navbar scroll effect
+      const nav = document.getElementById('main-nav');
+      let lastScroll = 0;
+
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        if (y > 60) {
+          nav?.classList.add('bg-obsidian-900/95', 'backdrop-blur-xl', 'border-b', 'border-obsidian-700/20');
+        } else {
+          nav?.classList.remove('bg-obsidian-900/95', 'backdrop-blur-xl', 'border-b', 'border-obsidian-700/20');
+        }
+        lastScroll = y;
+      });
+
+      // Scroll reveal
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      reveals.forEach(el => observer.observe(el));
     </script>
   </body>
 </html>

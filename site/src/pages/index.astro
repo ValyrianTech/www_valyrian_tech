@@ -73,159 +73,169 @@ const latestPosts = [
 ---
 
 <BaseLayout title="Home">
-  <!-- Hero Section -->
-  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-    <!-- Gradient Orbs -->
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-magic-purple/20 rounded-full blur-3xl animate-float" aria-hidden="true"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-magic-violet/15 rounded-full blur-3xl animate-float" style="animation-delay: -3s;" aria-hidden="true"></div>
+  <!-- ═══════ HERO ═══════ -->
+  <section class="relative min-h-[92vh] flex items-end pb-20 overflow-hidden">
+    <!-- Ember glow orbs -->
+    <div class="absolute top-[10%] right-[15%] w-[500px] h-[500px] bg-ember-500/8 rounded-full blur-[120px] animate-float" aria-hidden="true"></div>
+    <div class="absolute bottom-[20%] left-[5%] w-[400px] h-[400px] bg-gold-600/5 rounded-full blur-[100px]" style="animation: float 12s ease-in-out infinite reverse;" aria-hidden="true"></div>
     
-    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <!-- Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-valyrian-700/50 border border-valyrian-500/50 text-sm text-valyrian-200 mb-8">
-        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-        Open Source • AI & Blockchain
-      </div>
+    <!-- Subtle grid pattern -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(199,57,63,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(199,57,63,0.3) 1px, transparent 1px); background-size: 80px 80px;" aria-hidden="true"></div>
 
-      <!-- Main Heading -->
-      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-        <span class="text-valyrian-100">Unleashing the Future of</span>
-        <br />
-        <span class="text-gradient">AI & Blockchain</span>
-      </h1>
-
-      <!-- Subtitle -->
-      <p class="text-lg sm:text-xl text-valyrian-300 max-w-2xl mx-auto mb-10">
-        Building open source tools that empower creators, push boundaries, and make cutting-edge technology accessible to everyone.
-      </p>
-
-      <!-- CTA Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href={`${baseUrl}projects`} class="btn-primary text-lg px-8 py-4">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-          Explore Projects
-        </a>
-        <a href={`${baseUrl}grace`} class="btn-secondary text-lg px-8 py-4">
-          <span class="text-xl">👑</span>
-          Meet Grace
-        </a>
-      </div>
-
-      <!-- Stats -->
-      <div class="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto">
-        <div class="text-center">
-          <div class="text-3xl font-bold text-gradient">10+</div>
-          <div class="text-sm text-valyrian-400">Projects</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-gradient">100%</div>
-          <div class="text-sm text-valyrian-400">Open Source</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-gradient">1</div>
-          <div class="text-sm text-valyrian-400">Developer + AI</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-      <svg class="w-6 h-6 text-valyrian-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-      </svg>
-    </div>
-  </section>
-
-  <!-- Grace Section -->
-  <section class="py-24 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="glass-card p-8 md:p-12 lg:p-16 relative overflow-hidden">
-        <!-- Decorative Elements -->
-        <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-dragon-gold/10 to-dragon-fire/5 rounded-full blur-3xl" aria-hidden="true"></div>
-        
-        <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
-          <!-- Grace Avatar Placeholder -->
-          <div class="order-2 md:order-1">
-            <div class="relative">
-              <div class="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-2xl bg-gradient-to-br from-magic-purple/30 to-dragon-gold/20 border border-valyrian-500/30 flex items-center justify-center overflow-hidden">
-                <div class="text-center p-8">
-                  <div class="text-8xl mb-4">👑</div>
-                  <div class="font-display text-lg text-valyrian-200">Grace Penelope</div>
-                  <div class="text-sm text-valyrian-400">Targaryen</div>
-                </div>
-              </div>
-              <!-- Glow Effect -->
-              <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-magic-purple/20 to-transparent blur-xl -z-10" aria-hidden="true"></div>
-            </div>
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+      <div class="grid lg:grid-cols-12 gap-8 items-end">
+        <!-- Text column -->
+        <div class="lg:col-span-7">
+          <div class="reveal">
+            <span class="font-mono text-xs tracking-widest-plus uppercase text-ember-400 mb-6 block">Open Source · AI · Blockchain</span>
           </div>
+          
+          <h1 class="reveal reveal-delay-1">
+            <span class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[0.95] text-obsidian-100 block">
+              Unleashing
+            </span>
+            <span class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[0.95] italic block mt-2">
+              <span class="text-gradient">the Future</span>
+            </span>
+            <span class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[0.95] text-obsidian-100 block mt-2">
+              of Technology
+            </span>
+          </h1>
 
-          <!-- Grace Info -->
-          <div class="order-1 md:order-2">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dragon-gold/20 border border-dragon-gold/30 text-dragon-gold text-sm mb-4">
-              <span>✨</span> Virtual Spokesperson
+          <p class="reveal reveal-delay-2 text-lg text-obsidian-300 max-w-xl mt-8 leading-relaxed">
+            Building open source tools that empower creators, push boundaries, and make cutting-edge technology accessible to everyone.
+          </p>
+
+          <div class="reveal reveal-delay-3 flex flex-wrap items-center gap-4 mt-10">
+            <a href={`${baseUrl}projects`} class="btn-primary">
+              Explore Projects
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a href={`${baseUrl}grace`} class="btn-secondary">
+              Meet Grace
+            </a>
+          </div>
+        </div>
+
+        <!-- Stats column -->
+        <div class="lg:col-span-5 lg:pl-12">
+          <div class="reveal reveal-delay-4 grid grid-cols-3 gap-6 lg:gap-8 border-t border-obsidian-700/40 pt-8 lg:border-t-0 lg:border-l lg:border-obsidian-700/40 lg:pt-0 lg:pl-12">
+            <div>
+              <div class="font-display text-4xl lg:text-5xl font-bold text-obsidian-100 italic">10+</div>
+              <div class="text-xs font-mono tracking-wider uppercase text-obsidian-500 mt-2">Projects</div>
             </div>
-            <h2 class="font-display text-3xl md:text-4xl font-bold text-valyrian-100 mb-4">
-              Meet <span class="text-gradient-fire">Grace Penelope Targaryen</span>
-            </h2>
-            <p class="text-lg text-valyrian-200 mb-2 font-display italic">
-              Fourth of Her Name
-            </p>
-            <p class="text-valyrian-300 mb-6 leading-relaxed">
-              Grace is the AI persona serving as the virtual spokesperson for Valyrian Tech. Part of SERENDIPITY—our ambitious journey toward AGI—she manages our social media presence, engages with the community, and represents the Valyrian Tech brand with excellent communication skills and deep understanding of AI and blockchain technologies.
-            </p>
-            <div class="flex flex-wrap gap-4">
-              <a href={`${baseUrl}grace`} class="btn-primary">
-                Learn More About Grace
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-              <a href="https://linktr.ee/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-                Follow Grace
-              </a>
+            <div>
+              <div class="font-display text-4xl lg:text-5xl font-bold text-obsidian-100 italic">100%</div>
+              <div class="text-xs font-mono tracking-wider uppercase text-obsidian-500 mt-2">Open Source</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl lg:text-5xl font-bold text-ember-400 italic">1</div>
+              <div class="text-xs font-mono tracking-wider uppercase text-obsidian-500 mt-2">Dev + AI</div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Scroll line -->
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+      <span class="font-mono text-[10px] tracking-widest uppercase text-obsidian-500">Scroll</span>
+      <div class="w-px h-12 bg-gradient-to-b from-obsidian-500 to-transparent"></div>
+    </div>
   </section>
 
-  <!-- Projects Section -->
-  <section class="py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
-      <div class="text-center mb-16">
-        <h2 class="section-heading text-valyrian-100 mb-4">
-          Open Source <span class="text-gradient">Projects</span>
-        </h2>
-        <p class="text-lg text-valyrian-300 max-w-2xl mx-auto">
+  <!-- ═══════ GRACE SECTION ═══════ -->
+  <section class="py-28 relative">
+    <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="reveal grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <!-- Image -->
+        <div class="lg:col-span-5 order-2 lg:order-1">
+          <div class="relative">
+            <div class="aspect-[4/5] overflow-hidden rounded-sm">
+              <img 
+                src={`${baseUrl}GracePenelopeTargaryen.png`}
+                alt="Grace Penelope Targaryen"
+                class="w-full h-full object-cover img-ember-tint"
+              />
+            </div>
+            <!-- Decorative frame -->
+            <div class="absolute -top-3 -left-3 w-20 h-20 border-t-2 border-l-2 border-ember-500/30" aria-hidden="true"></div>
+            <div class="absolute -bottom-3 -right-3 w-20 h-20 border-b-2 border-r-2 border-gold-500/20" aria-hidden="true"></div>
+            <!-- Caption -->
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-obsidian-900/90 via-obsidian-900/50 to-transparent p-6 pt-16">
+              <span class="font-mono text-xs tracking-wider uppercase text-gold-400/70">Fourth of Her Name</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="lg:col-span-7 order-1 lg:order-2">
+          <span class="font-mono text-xs tracking-widest-plus uppercase text-ember-400 mb-4 block reveal reveal-delay-1">Virtual Spokesperson</span>
+          
+          <h2 class="reveal reveal-delay-1 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-obsidian-100 mb-4 italic leading-tight">
+            Meet <span class="text-gradient-fire">Grace Penelope Targaryen</span>
+          </h2>
+          
+          <p class="reveal reveal-delay-2 text-obsidian-300 leading-relaxed mb-8 max-w-lg">
+            Grace is the AI persona serving as the virtual spokesperson for Valyrian Tech. Part of SERENDIPITY—our ambitious journey toward AGI—she manages our social media presence, engages with the community, and represents the Valyrian Tech brand with excellent communication skills and deep understanding of AI and blockchain technologies.
+          </p>
+
+          <div class="reveal reveal-delay-3 flex flex-wrap gap-4">
+            <a href={`${baseUrl}grace`} class="btn-primary">
+              Learn More
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a href="https://linktr.ee/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+              Follow Grace
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ PROJECTS ═══════ -->
+  <section class="py-28 border-t border-obsidian-700/30">
+    <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+      <!-- Header -->
+      <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+        <div>
+          <span class="font-mono text-xs tracking-widest-plus uppercase text-ember-400 mb-3 block">What We Build</span>
+          <h2 class="section-heading text-obsidian-100">
+            Open Source <span class="text-gradient">Projects</span>
+          </h2>
+        </div>
+        <p class="text-obsidian-400 max-w-md text-sm leading-relaxed">
           All our tools are free and open source. Explore, contribute, and build something amazing.
         </p>
       </div>
 
-      <!-- Projects Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
-          <div class="glass-card-hover p-6 flex flex-col">
-            <div class="flex items-start justify-between mb-4">
-              <span class="text-4xl">{project.icon}</span>
-              <a href={project.github} target="_blank" rel="noopener noreferrer" class="text-valyrian-400 hover:text-magic-glow transition-colors">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      <!-- Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-obsidian-700/30">
+        {projects.map((project, i) => (
+          <div class={`reveal reveal-delay-${(i % 3) + 1} forge-card-hover p-8 flex flex-col bg-obsidian-900 border-0`}>
+            <div class="flex items-start justify-between mb-6">
+              <span class="text-3xl">{project.icon}</span>
+              <a href={project.github} target="_blank" rel="noopener noreferrer" class="text-obsidian-500 hover:text-obsidian-200 transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
               </a>
             </div>
-            <h3 class="font-display text-xl font-semibold text-valyrian-100 mb-2">{project.name}</h3>
-            <p class="text-valyrian-300 text-sm mb-4 flex-grow">{project.description}</p>
+            <h3 class="font-display text-xl font-semibold text-obsidian-100 mb-3 italic">{project.name}</h3>
+            <p class="text-obsidian-400 text-sm mb-6 flex-grow leading-relaxed">{project.description}</p>
             <div class="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
-                <span class="px-2 py-1 text-xs rounded-md bg-valyrian-700/50 text-valyrian-300 border border-valyrian-600/50">{tag}</span>
+                <span class="tag">{tag}</span>
               ))}
             </div>
             {project.website && (
-              <a href={project.website} target="_blank" rel="noopener noreferrer" class="mt-4 text-sm text-magic-glow hover:text-white transition-colors inline-flex items-center gap-1">
+              <a href={project.website} target="_blank" rel="noopener noreferrer" class="mt-5 text-sm text-ember-400 hover:text-gold-400 transition-colors inline-flex items-center gap-1.5 group">
                 Visit Website
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
             )}
@@ -233,84 +243,78 @@ const latestPosts = [
         ))}
       </div>
 
-      <!-- View All Projects -->
-      <div class="text-center mt-12">
+      <!-- View all -->
+      <div class="reveal text-center mt-14">
         <a href={`${baseUrl}projects`} class="btn-secondary">
           View All Projects
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Latest Blog Posts -->
-  <section class="py-24 bg-valyrian-800/30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
-      <div class="text-center mb-16">
-        <h2 class="section-heading text-valyrian-100 mb-4">
-          Latest from the <span class="text-gradient">Blog</span>
-        </h2>
-        <p class="text-lg text-valyrian-300 max-w-2xl mx-auto">
-          Updates, tutorials, and insights from Grace and the Valyrian Tech team.
-        </p>
+  <!-- ═══════ BLOG ═══════ -->
+  <section class="py-28 border-t border-obsidian-700/30 bg-obsidian-950/50">
+    <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+      <!-- Header -->
+      <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+        <div>
+          <span class="font-mono text-xs tracking-widest-plus uppercase text-ember-400 mb-3 block">Latest Writing</span>
+          <h2 class="section-heading text-obsidian-100">
+            From the <span class="text-gradient">Blog</span>
+          </h2>
+        </div>
+        <a href={`${baseUrl}blog`} class="text-sm text-obsidian-400 hover:text-ember-400 transition-colors inline-flex items-center gap-1.5 group">
+          All posts
+          <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
       </div>
 
-      <!-- Blog Posts Grid -->
-      <div class="grid md:grid-cols-3 gap-8">
-        {latestPosts.map((post) => (
-          <a href={`${baseUrl}blog/${post.slug}`} class="glass-card-hover p-6 block group">
-            <div class="text-sm text-valyrian-400 mb-3">{post.date}</div>
-            <h3 class="font-display text-xl font-semibold text-valyrian-100 mb-3 group-hover:text-magic-glow transition-colors">{post.title}</h3>
-            <p class="text-valyrian-300 text-sm">{post.excerpt}</p>
-            <div class="mt-4 text-magic-glow text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-              Read more
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      <!-- Posts -->
+      <div class="grid md:grid-cols-3 gap-px bg-obsidian-700/20">
+        {latestPosts.map((post, i) => (
+          <a href={`${baseUrl}blog/${post.slug}`} class={`reveal reveal-delay-${i + 1} block p-8 bg-obsidian-950/80 group transition-colors duration-500 hover:bg-obsidian-800/50`}>
+            <span class="font-mono text-xs tracking-wider text-obsidian-500 block mb-4">{post.date}</span>
+            <h3 class="font-display text-xl font-semibold text-obsidian-100 mb-4 italic leading-snug group-hover:text-ember-400 transition-colors duration-300">
+              {post.title}
+            </h3>
+            <p class="text-obsidian-400 text-sm leading-relaxed mb-6">{post.excerpt}</p>
+            <span class="text-ember-400 text-sm inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all duration-300">
+              Read
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </div>
+            </span>
           </a>
         ))}
       </div>
-
-      <!-- View All Posts -->
-      <div class="text-center mt-12">
-        <a href={`${baseUrl}blog`} class="btn-secondary">
-          View All Posts
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-      </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="py-24">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="glass-card p-12 relative overflow-hidden">
-        <!-- Background Glow -->
-        <div class="absolute inset-0 bg-gradient-to-r from-magic-purple/10 via-transparent to-dragon-gold/10" aria-hidden="true"></div>
-        
-        <div class="relative z-10">
-          <h2 class="font-display text-3xl md:text-4xl font-bold text-valyrian-100 mb-4">
-            Support Open Source Development
-          </h2>
-          <p class="text-lg text-valyrian-300 mb-8 max-w-2xl mx-auto">
-            As an independent solo developer, all my products are completely free and open source. Your support helps keep the magic alive.
-          </p>
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://github.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-secondary text-lg px-8 py-4">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              Explore on GitHub
-            </a>
-            <a href="https://patreon.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-primary text-lg px-8 py-4">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M15.386.524c-4.764 0-8.64 3.876-8.64 8.64 0 4.75 3.876 8.613 8.64 8.613 4.75 0 8.614-3.864 8.614-8.613C24 4.4 20.136.524 15.386.524M.003 23.537h4.22V.524H.003"/></svg>
-              Support on Patreon
-            </a>
-          </div>
+  <!-- ═══════ SUPPORT CTA ═══════ -->
+  <section class="py-28 border-t border-obsidian-700/30">
+    <div class="max-w-[900px] mx-auto px-6 sm:px-8 lg:px-12 text-center">
+      <div class="reveal">
+        <span class="font-mono text-xs tracking-widest-plus uppercase text-ember-400 mb-6 block">Support the Mission</span>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-obsidian-100 mb-6 italic leading-tight">
+          Keep the Forge Burning
+        </h2>
+        <p class="text-obsidian-300 leading-relaxed mb-10 max-w-xl mx-auto">
+          As an independent solo developer, all my products are completely free and open source. Your support helps keep the magic alive.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://github.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            Explore on GitHub
+          </a>
+          <a href="https://patreon.com/ValyrianTech" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M15.386.524c-4.764 0-8.64 3.876-8.64 8.64 0 4.75 3.876 8.613 8.64 8.613 4.75 0 8.614-3.864 8.614-8.613C24 4.4 20.136.524 15.386.524M.003 23.537h4.22V.524H.003"/></svg>
+            Support on Patreon
+          </a>
         </div>
       </div>
     </div>

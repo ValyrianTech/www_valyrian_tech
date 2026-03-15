@@ -13,47 +13,47 @@ const baseUrl = base.endsWith('/') ? base : `${base}/`;
 ---
 
 <BaseLayout title={title}>
-  <article class="pt-24 pb-16">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+  <article class="pt-12 pb-28">
+    <div class="max-w-[800px] mx-auto px-6 sm:px-8 lg:px-12">
       <!-- Header -->
-      <header class="mb-12">
-        <div class="flex flex-wrap gap-2 mb-4">
+      <header class="mb-14 reveal">
+        <div class="flex flex-wrap gap-2 mb-5">
           {categories.map((cat) => (
-            <span class="px-2 py-1 text-xs rounded-md bg-magic-purple/20 text-magic-glow border border-magic-purple/30">{cat}</span>
+            <span class="tag-ember">{cat}</span>
           ))}
         </div>
         
-        <h1 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-valyrian-100 mb-6">
+        <h1 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-obsidian-100 italic leading-tight mb-8">
           {title}
         </h1>
         
         <div class="flex items-center gap-4">
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-dragon-gold to-dragon-fire flex items-center justify-center">
-              <span class="text-lg">👑</span>
+            <div class="w-10 h-10 rounded-sm overflow-hidden">
+              <img src={`${baseUrl}GracePenelopeTargaryen.png`} alt="Grace" class="w-full h-full object-cover" />
             </div>
             <div>
-              <div class="font-medium text-valyrian-100 text-sm">Grace Penelope Targaryen</div>
-              <div class="text-xs text-valyrian-400">Fourth of Her Name</div>
+              <div class="font-display font-medium text-obsidian-100 text-sm italic">Grace Penelope Targaryen</div>
+              <div class="text-xs text-obsidian-500 font-mono tracking-wider">Fourth of Her Name</div>
             </div>
           </div>
-          <div class="text-valyrian-400 text-sm">•</div>
-          <div class="text-valyrian-400 text-sm">{date}</div>
+          <div class="text-obsidian-600">·</div>
+          <div class="text-obsidian-500 text-sm font-mono tracking-wider">{date}</div>
         </div>
+
+        <div class="forge-divider mt-10"></div>
       </header>
 
       <!-- Content -->
-      <div class="glass-card p-8 md:p-12">
-        <div class="prose-valyrian">
-          <slot />
-        </div>
+      <div class="reveal reveal-delay-1 prose-forge">
+        <slot />
       </div>
 
       <!-- Navigation -->
-      <nav class="mt-12 flex justify-between items-center">
-        <a href={`${baseUrl}blog`} class="btn-secondary">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      <nav class="mt-16 pt-10 border-t border-obsidian-700/30 flex justify-between items-center">
+        <a href={`${baseUrl}blog`} class="btn-secondary text-xs">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
           </svg>
           Back to Blog
         </a>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Outfit:wght@200;300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,188 +10,241 @@
   }
   
   body {
-    @apply bg-valyrian-900 text-valyrian-100 font-body;
-    background-image: 
-      radial-gradient(ellipse at top, rgba(157, 78, 221, 0.1) 0%, transparent 50%),
-      radial-gradient(ellipse at bottom right, rgba(123, 44, 191, 0.05) 0%, transparent 50%);
+    @apply bg-obsidian-900 text-obsidian-200 font-body;
     min-height: 100vh;
   }
 
   ::selection {
-    @apply bg-magic-purple/40 text-white;
+    background: rgba(199, 57, 63, 0.3);
+    color: #fdf5d8;
   }
 }
 
 @layer components {
-  .glass-card {
-    @apply bg-valyrian-800/60 backdrop-blur-xl border border-valyrian-600/30 rounded-2xl;
-    box-shadow: 
-      0 4px 30px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  /* ─── Cards ─── */
+  .forge-card {
+    @apply bg-obsidian-800 border border-obsidian-600/40 rounded-sm;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset;
   }
 
-  .glass-card-hover {
-    @apply glass-card transition-all duration-300;
+  .forge-card-hover {
+    @apply forge-card transition-all duration-500;
   }
 
-  .glass-card-hover:hover {
-    @apply border-magic-purple/50 -translate-y-1;
-    box-shadow: 
-      0 8px 40px rgba(157, 78, 221, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  .forge-card-hover:hover {
+    @apply border-ember-500/40;
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(199, 57, 63, 0.1);
+    transform: translateY(-2px);
   }
 
+  /* ─── Buttons ─── */
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-magic-purple to-magic-violet 
-           text-white font-medium rounded-xl transition-all duration-300
-           hover:shadow-lg hover:shadow-magic-purple/30 hover:-translate-y-0.5
-           active:translate-y-0;
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5
+           bg-ember-500 text-white font-body font-medium text-sm tracking-wide
+           rounded-sm transition-all duration-300 uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .btn-primary:hover {
+    @apply bg-ember-400;
+    box-shadow: 0 8px 30px rgba(199, 57, 63, 0.3);
+    transform: translateY(-1px);
   }
 
   .btn-secondary {
-    @apply inline-flex items-center gap-2 px-6 py-3 bg-valyrian-700/50 border border-valyrian-500/50
-           text-valyrian-100 font-medium rounded-xl transition-all duration-300
-           hover:bg-valyrian-600/50 hover:border-magic-purple/50 hover:-translate-y-0.5;
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5
+           bg-transparent border border-obsidian-500 text-obsidian-200
+           font-body font-medium text-sm tracking-wide
+           rounded-sm transition-all duration-300 uppercase;
+    letter-spacing: 0.08em;
   }
 
+  .btn-secondary:hover {
+    @apply border-gold-500 text-gold-400;
+    transform: translateY(-1px);
+  }
+
+  /* ─── Typography ─── */
   .text-gradient {
-    @apply bg-gradient-to-r from-magic-glow via-magic-purple to-dragon-gold bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-ember-400 via-gold-500 to-ember-400 bg-clip-text text-transparent;
   }
 
   .text-gradient-fire {
-    @apply bg-gradient-to-r from-dragon-fire via-dragon-gold to-dragon-ember bg-clip-text text-transparent;
-  }
-
-  .link-glow {
-    @apply text-magic-glow hover:text-white transition-colors duration-300 relative;
-  }
-
-  .link-glow::after {
-    content: '';
-    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-magic-purple to-magic-glow transition-all duration-300;
-  }
-
-  .link-glow:hover::after {
-    @apply w-full;
+    @apply bg-gradient-to-r from-gold-400 via-ember-400 to-gold-500 bg-clip-text text-transparent;
   }
 
   .section-heading {
-    @apply font-display text-3xl md:text-4xl lg:text-5xl font-semibold tracking-wide;
+    @apply font-display text-3xl md:text-4xl lg:text-5xl font-bold italic;
   }
 
-  .prose-valyrian {
-    @apply text-valyrian-200 leading-relaxed;
+  /* ─── Links ─── */
+  .link-ember {
+    @apply text-obsidian-300 hover:text-ember-400 transition-colors duration-300 relative;
   }
 
-  .prose-valyrian h1,
-  .prose-valyrian h2,
-  .prose-valyrian h3 {
-    @apply font-display text-valyrian-100 mt-8 mb-4;
+  .link-ember::after {
+    content: '';
+    @apply absolute -bottom-0.5 left-0 w-0 h-px bg-ember-500 transition-all duration-300;
   }
 
-  .prose-valyrian h1 { @apply text-3xl md:text-4xl; }
-  .prose-valyrian h2 { @apply text-2xl md:text-3xl; }
-  .prose-valyrian h3 { @apply text-xl md:text-2xl; }
-
-  .prose-valyrian p {
-    @apply mb-4;
+  .link-ember:hover::after {
+    @apply w-full;
   }
 
-  .prose-valyrian a {
-    @apply text-magic-glow hover:text-white underline decoration-magic-purple/50 hover:decoration-magic-glow transition-colors;
+  /* ─── Prose ─── */
+  .prose-forge {
+    @apply text-obsidian-300 leading-relaxed text-base;
+    max-width: 65ch;
   }
 
-  .prose-valyrian ul,
-  .prose-valyrian ol {
-    @apply mb-4 pl-6;
+  .prose-forge h1,
+  .prose-forge h2,
+  .prose-forge h3 {
+    @apply font-display text-obsidian-100 mt-10 mb-5 italic;
   }
 
-  .prose-valyrian li {
+  .prose-forge h1 { @apply text-3xl md:text-4xl; }
+  .prose-forge h2 { @apply text-2xl md:text-3xl; }
+  .prose-forge h3 { @apply text-xl md:text-2xl; }
+
+  .prose-forge p {
+    @apply mb-5;
+  }
+
+  .prose-forge a {
+    @apply text-ember-400 hover:text-gold-400 underline decoration-ember-500/30 underline-offset-4 hover:decoration-gold-500/50 transition-colors;
+  }
+
+  .prose-forge ul,
+  .prose-forge ol {
+    @apply mb-5 pl-6;
+  }
+
+  .prose-forge li {
     @apply mb-2;
   }
 
-  .prose-valyrian ul li {
+  .prose-forge ul li {
     @apply list-disc;
+    &::marker {
+      @apply text-ember-500/60;
+    }
   }
 
-  .prose-valyrian ol li {
+  .prose-forge ol li {
     @apply list-decimal;
+    &::marker {
+      @apply text-ember-500/60;
+    }
   }
 
-  .prose-valyrian code {
-    @apply font-mono bg-valyrian-700/50 px-1.5 py-0.5 rounded text-magic-glow text-sm;
+  .prose-forge code {
+    @apply font-mono bg-obsidian-700 px-1.5 py-0.5 rounded-sm text-gold-400 text-sm;
   }
 
-  .prose-valyrian pre {
-    @apply bg-valyrian-800 border border-valyrian-600/50 rounded-xl p-4 overflow-x-auto mb-4;
+  .prose-forge pre {
+    @apply bg-obsidian-950 border border-obsidian-700 rounded-sm p-5 overflow-x-auto mb-5;
   }
 
-  .prose-valyrian pre code {
+  .prose-forge pre code {
     @apply bg-transparent p-0;
   }
 
-  .prose-valyrian blockquote {
-    @apply border-l-4 border-magic-purple pl-4 italic text-valyrian-300 my-4;
+  .prose-forge blockquote {
+    @apply border-l-2 border-ember-500/50 pl-6 italic text-obsidian-400 my-6;
   }
 
-  .prose-valyrian strong {
-    @apply text-valyrian-100 font-semibold;
+  .prose-forge strong {
+    @apply text-obsidian-100 font-semibold;
+  }
+
+  .prose-forge hr {
+    @apply border-obsidian-700 my-10;
+  }
+
+  /* ─── Tags ─── */
+  .tag {
+    @apply px-2.5 py-1 text-xs font-mono tracking-wider uppercase
+           bg-obsidian-800 text-obsidian-400 border border-obsidian-700;
+  }
+
+  .tag-ember {
+    @apply tag border-ember-800/50 text-ember-400 bg-ember-900/20;
   }
 }
 
-/* Particle animation background */
-.particles-bg {
+/* ─── Film Grain Overlay ─── */
+.grain-overlay::before {
+  content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
   pointer-events: none;
-  z-index: -1;
-  overflow: hidden;
+  z-index: 9999;
+  animation: grain 8s steps(10) infinite;
+  opacity: 0.4;
 }
 
-.particle {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: rgba(157, 78, 221, 0.6);
-  border-radius: 50%;
-  animation: particle-float 15s infinite;
+/* ─── Warm Vignette ─── */
+.warm-vignette {
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(199, 57, 63, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(184, 134, 11, 0.04) 0%, transparent 50%);
 }
 
-@keyframes particle-float {
-  0%, 100% {
-    transform: translateY(100vh) translateX(0) scale(0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-    transform: translateY(90vh) translateX(10px) scale(1);
-  }
-  90% {
-    opacity: 1;
-    transform: translateY(10vh) translateX(-10px) scale(1);
-  }
-  100% {
-    transform: translateY(0) translateX(0) scale(0);
-    opacity: 0;
-  }
+/* ─── Divider ─── */
+.forge-divider {
+  @apply w-full h-px bg-gradient-to-r from-transparent via-obsidian-600 to-transparent;
 }
 
-/* Scrollbar styling */
+/* ─── Scrollbar ─── */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-valyrian-900;
+  @apply bg-obsidian-950;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-valyrian-600 rounded-full;
+  @apply bg-obsidian-600;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-magic-purple;
+  @apply bg-ember-500;
+}
+
+/* ─── Scroll-triggered animations ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ─── Image treatments ─── */
+.img-ember-tint {
+  filter: sepia(0.1) saturate(1.2);
+  transition: filter 0.5s ease;
+}
+
+.img-ember-tint:hover {
+  filter: sepia(0) saturate(1.4);
 }
