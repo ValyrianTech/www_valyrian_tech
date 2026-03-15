@@ -20,6 +20,14 @@ const baseUrl = base.endsWith('/') ? base : `${base}/`;
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
     <title>{title} | Valyrian Tech</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-69YVB2N4FV"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-69YVB2N4FV');
+    </script>
   </head>
   <body class="min-h-screen flex flex-col grain-overlay warm-vignette">
 
