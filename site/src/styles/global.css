@@ -10,7 +10,9 @@
   }
   
   body {
-    @apply bg-obsidian-900 text-obsidian-200 font-body;
+    background-color: #0d0d0d;
+    color: #c4c4c4;
+    font-family: 'Outfit', system-ui, sans-serif;
     min-height: 100vh;
   }
 
@@ -18,21 +20,31 @@
     background: rgba(199, 57, 63, 0.3);
     color: #fdf5d8;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
 }
 
 @layer components {
   /* ─── Cards ─── */
   .forge-card {
-    @apply bg-obsidian-800 border border-obsidian-600/40 rounded-sm;
+    background-color: #141414;
+    border: 1px solid rgba(42, 42, 42, 0.4);
+    border-radius: 0.125rem;
     box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset;
   }
 
   .forge-card-hover {
-    @apply forge-card transition-all duration-500;
+    background-color: #141414;
+    border: 1px solid rgba(42, 42, 42, 0.4);
+    border-radius: 0.125rem;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset;
+    transition: all 0.5s;
   }
 
   .forge-card-hover:hover {
-    @apply border-ember-500/40;
+    border-color: rgba(199, 57, 63, 0.4);
     box-shadow:
       0 20px 60px rgba(0, 0, 0, 0.4),
       0 0 0 1px rgba(199, 57, 63, 0.1);
@@ -42,51 +54,69 @@
   /* ─── Buttons ─── */
   .btn-primary {
     @apply inline-flex items-center gap-2.5 px-7 py-3.5
-           bg-ember-500 text-white font-body font-medium text-sm tracking-wide
+           text-white font-medium text-sm tracking-wide
            rounded-sm transition-all duration-300 uppercase;
+    background-color: #c7393f;
+    font-family: 'Outfit', system-ui, sans-serif;
     letter-spacing: 0.08em;
   }
 
   .btn-primary:hover {
-    @apply bg-ember-400;
+    background-color: #d4585e;
     box-shadow: 0 8px 30px rgba(199, 57, 63, 0.3);
     transform: translateY(-1px);
   }
 
   .btn-secondary {
     @apply inline-flex items-center gap-2.5 px-7 py-3.5
-           bg-transparent border border-obsidian-500 text-obsidian-200
-           font-body font-medium text-sm tracking-wide
+           bg-transparent font-medium text-sm tracking-wide
            rounded-sm transition-all duration-300 uppercase;
+    border: 1px solid #3d3d3d;
+    color: #c4c4c4;
+    font-family: 'Outfit', system-ui, sans-serif;
     letter-spacing: 0.08em;
   }
 
   .btn-secondary:hover {
-    @apply border-gold-500 text-gold-400;
+    border-color: #e6b422;
+    color: #f0c94c;
     transform: translateY(-1px);
   }
 
   /* ─── Typography ─── */
   .text-gradient {
-    @apply bg-gradient-to-r from-ember-400 via-gold-500 to-ember-400 bg-clip-text text-transparent;
+    background: linear-gradient(to right, #d4585e, #e6b422, #d4585e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .text-gradient-fire {
-    @apply bg-gradient-to-r from-gold-400 via-ember-400 to-gold-500 bg-clip-text text-transparent;
+    background: linear-gradient(to right, #f0c94c, #d4585e, #e6b422);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .section-heading {
-    @apply font-display text-3xl md:text-4xl lg:text-5xl font-bold italic;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold italic;
+    font-family: 'Playfair Display', Georgia, serif;
   }
 
   /* ─── Links ─── */
   .link-ember {
-    @apply text-obsidian-300 hover:text-ember-400 transition-colors duration-300 relative;
+    @apply transition-colors duration-300 relative;
+    color: #999999;
+  }
+
+  .link-ember:hover {
+    color: #d4585e;
   }
 
   .link-ember::after {
     content: '';
-    @apply absolute -bottom-0.5 left-0 w-0 h-px bg-ember-500 transition-all duration-300;
+    @apply absolute -bottom-0.5 left-0 w-0 h-px transition-all duration-300;
+    background-color: #c7393f;
   }
 
   .link-ember:hover::after {
@@ -95,14 +125,17 @@
 
   /* ─── Prose ─── */
   .prose-forge {
-    @apply text-obsidian-300 leading-relaxed text-base;
+    @apply leading-relaxed text-base;
+    color: #999999;
     max-width: 65ch;
   }
 
   .prose-forge h1,
   .prose-forge h2,
   .prose-forge h3 {
-    @apply font-display text-obsidian-100 mt-10 mb-5 italic;
+    @apply mt-10 mb-5 italic;
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #e8e8e8;
   }
 
   .prose-forge h1 { @apply text-3xl md:text-4xl; }
@@ -114,7 +147,16 @@
   }
 
   .prose-forge a {
-    @apply text-ember-400 hover:text-gold-400 underline decoration-ember-500/30 underline-offset-4 hover:decoration-gold-500/50 transition-colors;
+    color: #d4585e;
+    text-decoration: underline;
+    text-decoration-color: rgba(199, 57, 63, 0.3);
+    text-underline-offset: 4px;
+    transition: color 0.3s, text-decoration-color 0.3s;
+  }
+
+  .prose-forge a:hover {
+    color: #f0c94c;
+    text-decoration-color: rgba(230, 180, 34, 0.5);
   }
 
   .prose-forge ul,
@@ -128,24 +170,31 @@
 
   .prose-forge ul li {
     @apply list-disc;
-    &::marker {
-      @apply text-ember-500/60;
-    }
+  }
+
+  .prose-forge ul li::marker {
+    color: rgba(199, 57, 63, 0.6);
   }
 
   .prose-forge ol li {
     @apply list-decimal;
-    &::marker {
-      @apply text-ember-500/60;
-    }
+  }
+
+  .prose-forge ol li::marker {
+    color: rgba(199, 57, 63, 0.6);
   }
 
   .prose-forge code {
-    @apply font-mono bg-obsidian-700 px-1.5 py-0.5 rounded-sm text-gold-400 text-sm;
+    @apply px-1.5 py-0.5 rounded-sm text-sm;
+    font-family: 'IBM Plex Mono', monospace;
+    background-color: #1c1c1c;
+    color: #f0c94c;
   }
 
   .prose-forge pre {
-    @apply bg-obsidian-950 border border-obsidian-700 rounded-sm p-5 overflow-x-auto mb-5;
+    @apply rounded-sm p-5 overflow-x-auto mb-5;
+    background-color: #050505;
+    border: 1px solid #1c1c1c;
   }
 
   .prose-forge pre code {
@@ -153,25 +202,34 @@
   }
 
   .prose-forge blockquote {
-    @apply border-l-2 border-ember-500/50 pl-6 italic text-obsidian-400 my-6;
+    @apply pl-6 italic my-6;
+    border-left: 2px solid rgba(199, 57, 63, 0.5);
+    color: #6b6b6b;
   }
 
   .prose-forge strong {
-    @apply text-obsidian-100 font-semibold;
+    @apply font-semibold;
+    color: #e8e8e8;
   }
 
   .prose-forge hr {
-    @apply border-obsidian-700 my-10;
+    @apply my-10;
+    border-color: #1c1c1c;
   }
 
   /* ─── Tags ─── */
   .tag {
-    @apply px-2.5 py-1 text-xs font-mono tracking-wider uppercase
-           bg-obsidian-800 text-obsidian-400 border border-obsidian-700;
+    @apply px-2.5 py-1 text-xs font-mono tracking-wider uppercase;
+    background-color: #141414;
+    color: #6b6b6b;
+    border: 1px solid #1c1c1c;
   }
 
   .tag-ember {
-    @apply tag border-ember-800/50 text-ember-400 bg-ember-900/20;
+    @apply px-2.5 py-1 text-xs font-mono tracking-wider uppercase;
+    border: 1px solid rgba(127, 29, 29, 0.5);
+    color: #d4585e;
+    background-color: rgba(74, 14, 14, 0.2);
   }
 }
 
@@ -193,7 +251,15 @@
 }
 
 /* ─── Warm Vignette ─── */
-.warm-vignette {
+.warm-vignette::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
   background:
     radial-gradient(ellipse at 20% 0%, rgba(199, 57, 63, 0.06) 0%, transparent 50%),
     radial-gradient(ellipse at 80% 100%, rgba(184, 134, 11, 0.04) 0%, transparent 50%);
@@ -201,7 +267,9 @@
 
 /* ─── Divider ─── */
 .forge-divider {
-  @apply w-full h-px bg-gradient-to-r from-transparent via-obsidian-600 to-transparent;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #2a2a2a, transparent);
 }
 
 /* ─── Scrollbar ─── */
@@ -210,15 +278,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-obsidian-950;
+  background-color: #050505;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-obsidian-600;
+  background-color: #2a2a2a;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-ember-500;
+  background-color: #c7393f;
 }
 
 /* ─── Scroll-triggered animations ─── */
