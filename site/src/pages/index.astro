@@ -74,7 +74,7 @@ const latestPosts = [
 
 <BaseLayout title="Home">
   <!-- ═══════ HERO ═══════ -->
-  <section class="relative min-h-[92vh] flex items-end pb-20 overflow-hidden">
+  <section class="relative min-h-[85vh] flex items-center py-20 overflow-hidden">
     <!-- Ember glow orbs -->
     <div class="absolute top-[10%] right-[15%] w-[500px] h-[500px] bg-ember-500/8 rounded-full blur-[120px] animate-float" aria-hidden="true"></div>
     <div class="absolute bottom-[20%] left-[5%] w-[400px] h-[400px] bg-gold-600/5 rounded-full blur-[100px]" style="animation: float 12s ease-in-out infinite reverse;" aria-hidden="true"></div>
@@ -124,15 +124,15 @@ const latestPosts = [
           <div class="reveal reveal-delay-4 grid grid-cols-3 gap-6 lg:gap-8 border-t border-obsidian-700/40 pt-8 lg:border-t-0 lg:border-l lg:border-obsidian-700/40 lg:pt-0 lg:pl-12">
             <div>
               <div class="font-display text-4xl lg:text-5xl font-bold text-obsidian-100 italic">10+</div>
-              <div class="text-xs font-mono tracking-wider uppercase text-obsidian-500 mt-2">Projects</div>
+              <div class="text-xs font-mono tracking-wider uppercase text-obsidian-400 mt-2">Projects</div>
             </div>
             <div>
               <div class="font-display text-4xl lg:text-5xl font-bold text-obsidian-100 italic">100%</div>
-              <div class="text-xs font-mono tracking-wider uppercase text-obsidian-500 mt-2">Open Source</div>
+              <div class="text-xs font-mono tracking-wider uppercase text-obsidian-400 mt-2">Open Source</div>
             </div>
             <div>
               <div class="font-display text-4xl lg:text-5xl font-bold text-ember-400 italic">1</div>
-              <div class="text-xs font-mono tracking-wider uppercase text-obsidian-500 mt-2">Dev + AI</div>
+              <div class="text-xs font-mono tracking-wider uppercase text-obsidian-400 mt-2">Dev + AI</div>
             </div>
           </div>
         </div>
@@ -165,6 +165,7 @@ const latestPosts = [
             <div class="absolute -bottom-3 -right-3 w-20 h-20 border-b-2 border-r-2 border-gold-500/20" aria-hidden="true"></div>
             <!-- Caption -->
             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-obsidian-900/90 via-obsidian-900/50 to-transparent p-6 pt-16">
+              <span class="font-display text-sm font-semibold text-obsidian-100 italic block">Grace Penelope Targaryen</span>
               <span class="font-mono text-xs tracking-wider uppercase text-gold-400/70">Fourth of Her Name</span>
             </div>
           </div>
@@ -225,7 +226,7 @@ const latestPosts = [
               </a>
             </div>
             <h3 class="font-display text-xl font-semibold text-obsidian-100 mb-3 italic">{project.name}</h3>
-            <p class="text-obsidian-400 text-sm mb-6 flex-grow leading-relaxed">{project.description}</p>
+            <p class="text-obsidian-300 text-sm mb-6 flex-grow leading-relaxed">{project.description}</p>
             <div class="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <span class="tag">{tag}</span>
