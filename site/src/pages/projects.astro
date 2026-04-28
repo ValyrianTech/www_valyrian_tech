@@ -80,36 +80,6 @@ const projects = [
     tags: ['Docker', 'AI', 'ComfyUI', 'TTS'],
     features: ['One-click deploy', 'ComfyUI + FLUX', 'Text-generation-webui', 'F5-TTS server', 'ACE-Step music'],
   },
-  {
-    name: 'ACE-Step 1.5 XL',
-    description: 'API server for ACE-Step 1.5 XL music generation. Deploy on RunPod with all models pre-loaded and ready to use immediately.',
-    longDescription: 'ACE-Step 1.5 XL is a powerful music generation API server packaged as a Docker image with XL models baked in (~20GB). It features GPU support via NVIDIA CUDA 13 runtime and LLM-powered features for lyrics and caption formatting. Deploy instantly on RunPod or run locally with Docker Compose.',
-    icon: '🎵',
-    github: 'https://github.com/ValyrianTech/ace-step-1.5-xl',
-    website: 'https://console.runpod.io/deploy?template=5fn9cdbhtr&ref=2vdt3dn9',
-    tags: ['AI', 'Music', 'Docker', 'RunPod'],
-    features: ['XL models pre-loaded', 'REST API server', 'GPU acceleration', 'LLM-powered lyrics', 'One-click RunPod deploy'],
-  },
-  {
-    name: 'Qwen3-TTS Server',
-    description: 'API server for Qwen3-TTS with voice cloning, voice conversion, and multi-language support for 10 languages.',
-    longDescription: 'Qwen3-TTS Server provides high-quality text-to-speech synthesis with advanced features like voice cloning from short reference audio clips and voice conversion for existing audio files. Supports Chinese, English, Japanese, Korean, German, French, Russian, Portuguese, Spanish, and Italian. Uses Whisper for automatic transcription and includes speed control via time-stretching.',
-    icon: '🗣️',
-    github: 'https://github.com/ValyrianTech/Qwen3-TTS_server',
-    website: 'https://console.runpod.io/deploy?template=h8fjq3psk4&ref=2vdt3dn9',
-    tags: ['TTS', 'AI', 'Voice Cloning', 'Docker'],
-    features: ['Voice cloning', 'Voice conversion', '10 language support', 'Whisper transcription', 'Speed control'],
-  },
-  {
-    name: 'VibeVoice Server',
-    description: 'High-quality text-to-speech API server with voice cloning, multiple voice presets, and RTX 5090 Blackwell GPU support.',
-    longDescription: 'VibeVoice Server delivers high-quality text-to-speech synthesis with voice cloning capabilities from reference audio. Features multiple voice presets, voice conversion for existing audio files, and Docker support with RunPod compatibility. Optimized for the latest NVIDIA hardware including RTX 5090 Blackwell GPUs.',
-    icon: '🎤',
-    github: 'https://github.com/ValyrianTech/VibeVoice_server',
-    website: 'https://console.runpod.io/deploy?template=xb51emh3pj&ref=2vdt3dn9',
-    tags: ['TTS', 'AI', 'Voice Cloning', 'Docker'],
-    features: ['High-quality TTS', 'Voice cloning', 'Multiple presets', 'Voice conversion', 'RTX 5090 support'],
-  },
 ];
 ---
 
@@ -199,7 +169,7 @@ const projects = [
           More Docker Templates & <span class="text-gradient">Tools</span>
         </h2>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-px bg-obsidian-700/20">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-obsidian-700/20">
         <div class="reveal reveal-delay-1 p-6 bg-obsidian-950/80 group transition-colors duration-500 hover:bg-obsidian-800/50">
           <div class="text-2xl mb-3">🎨</div>
           <a href="https://github.com/ValyrianTech/ComfyUI_with_Flux" target="_blank" rel="noopener noreferrer" class="font-display text-base font-semibold text-obsidian-100 italic hover:text-ember-400 transition-colors block">ComfyUI + FLUX</a>
@@ -229,6 +199,24 @@ const projects = [
           <a href="https://github.com/ValyrianTech/ace-step-1.5" target="_blank" rel="noopener noreferrer" class="font-display text-base font-semibold text-obsidian-100 italic hover:text-ember-400 transition-colors block">ACE-Step 1.5</a>
           <div class="text-xs text-obsidian-500 font-mono tracking-wider mt-1 mb-4">Music Generation</div>
           <a href="https://console.runpod.io/deploy?template=uuc79b5j3c&ref=2vdt3dn9" target="_blank" rel="noopener noreferrer" class="inline-block text-xs font-mono tracking-wider uppercase px-3 py-1.5 bg-ember-600 hover:bg-ember-500 text-white rounded-sm transition-colors">Deploy</a>
+        </div>
+        <div class="reveal reveal-delay-6 p-6 bg-obsidian-950/80 group transition-colors duration-500 hover:bg-obsidian-800/50">
+          <div class="text-2xl mb-3">🎵</div>
+          <a href="https://github.com/ValyrianTech/ace-step-1.5-xl" target="_blank" rel="noopener noreferrer" class="font-display text-base font-semibold text-obsidian-100 italic hover:text-ember-400 transition-colors block">ACE-Step 1.5 XL</a>
+          <div class="text-xs text-obsidian-500 font-mono tracking-wider mt-1 mb-4">Music Generation</div>
+          <a href="https://console.runpod.io/deploy?template=5fn9cdbhtr&ref=2vdt3dn9" target="_blank" rel="noopener noreferrer" class="inline-block text-xs font-mono tracking-wider uppercase px-3 py-1.5 bg-ember-600 hover:bg-ember-500 text-white rounded-sm transition-colors">Deploy</a>
+        </div>
+        <div class="reveal reveal-delay-7 p-6 bg-obsidian-950/80 group transition-colors duration-500 hover:bg-obsidian-800/50">
+          <div class="text-2xl mb-3">🗣️</div>
+          <a href="https://github.com/ValyrianTech/Qwen3-TTS_server" target="_blank" rel="noopener noreferrer" class="font-display text-base font-semibold text-obsidian-100 italic hover:text-ember-400 transition-colors block">Qwen3-TTS</a>
+          <div class="text-xs text-obsidian-500 font-mono tracking-wider mt-1 mb-4">Text to Speech</div>
+          <a href="https://console.runpod.io/deploy?template=h8fjq3psk4&ref=2vdt3dn9" target="_blank" rel="noopener noreferrer" class="inline-block text-xs font-mono tracking-wider uppercase px-3 py-1.5 bg-ember-600 hover:bg-ember-500 text-white rounded-sm transition-colors">Deploy</a>
+        </div>
+        <div class="reveal reveal-delay-8 p-6 bg-obsidian-950/80 group transition-colors duration-500 hover:bg-obsidian-800/50">
+          <div class="text-2xl mb-3">🎤</div>
+          <a href="https://github.com/ValyrianTech/VibeVoice_server" target="_blank" rel="noopener noreferrer" class="font-display text-base font-semibold text-obsidian-100 italic hover:text-ember-400 transition-colors block">VibeVoice</a>
+          <div class="text-xs text-obsidian-500 font-mono tracking-wider mt-1 mb-4">Text to Speech</div>
+          <a href="https://console.runpod.io/deploy?template=xb51emh3pj&ref=2vdt3dn9" target="_blank" rel="noopener noreferrer" class="inline-block text-xs font-mono tracking-wider uppercase px-3 py-1.5 bg-ember-600 hover:bg-ember-500 text-white rounded-sm transition-colors">Deploy</a>
         </div>
       </div>
     </div>
